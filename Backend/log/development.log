@@ -1,0 +1,1823 @@
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (669.0ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" varchar NOT NULL PRIMARY KEY)[0m
+  [1m[35m (493.3ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" varchar NOT NULL PRIMARY KEY, "value" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to CreateIdeas (20200103100904)
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.9ms)[0m  [1m[35mCREATE TABLE "ideas" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "title" varchar, "body" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20200103100904"]]
+  [1m[35m (998.4ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.8ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.4ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.5ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["key", "environment"], ["value", "development"], ["created_at", "2020-01-03 10:09:09.155505"], ["updated_at", "2020-01-03 10:09:09.155505"]]
+  [1m[35m (779.5ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.8ms)[0m  [1m[32mINSERT INTO "ideas" ("title", "body", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["title", "A new cake recipe"], ["body", "Made of chocolate"], ["created_at", "2020-01-03 10:10:59.003490"], ["updated_at", "2020-01-03 10:10:59.003490"]]
+  [1m[35m (340.7ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "ideas" ("title", "body", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["title", "A twitter client idea"], ["body", "Only for replying to mentions and DMs"], ["created_at", "2020-01-03 10:10:59.348827"], ["updated_at", "2020-01-03 10:10:59.348827"]]
+  [1m[35m (657.6ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (1.4ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.7ms)[0m  [1m[32mINSERT INTO "ideas" ("title", "body", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["title", "A novel set in Italy"], ["body", "A mafia crime drama starring Berlusconi"], ["created_at", "2020-01-03 10:11:00.013252"], ["updated_at", "2020-01-03 10:11:00.013252"]]
+  [1m[35m (571.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "ideas" ("title", "body", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["title", "Card game design"], ["body", "Like Uno but involves drinking"], ["created_at", "2020-01-03 10:11:00.587311"], ["updated_at", "2020-01-03 10:11:00.587311"]]
+  [1m[35m (504.2ms)[0m  [1m[36mcommit transaction[0m
+Started GET "/api/v1/ideas" for ::1 at 2020-01-03 15:45:29 +0530
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by Api::V1::IdeasController#index as HTML
+  [1m[36mIdea Load (0.2ms)[0m  [1m[34mSELECT "ideas".* FROM "ideas"[0m
+Completed 200 OK in 14ms (Views: 11.4ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/" for ::1 at 2020-01-03 16:24:12 +0530
+Started GET "/static/js/0.chunk.js.map" for ::1 at 2020-01-03 16:24:15 +0530
+Started GET "/static/js/bundle.js.map" for ::1 at 2020-01-03 16:24:15 +0530
+Started GET "/static/js/main.chunk.js.map" for ::1 at 2020-01-03 16:24:15 +0530
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  
+ActionController::RoutingError (No route matches [GET] "/static/js/main.chunk.js.map"):
+  
+  
+ActionController::RoutingError (No route matches [GET] "/static/js/bundle.js.map"):
+  
+actionpack (5.1.7) lib/action_dispatch/middleware/debug_exceptions.rb:63:in `call'
+actionpack (5.1.7) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.1.7) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.1.7) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.1.7) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.1.7) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.1.7) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.1.7) lib/rails/rack/logger.rb:24:in `call'
+actionpack (5.1.7) lib/action_dispatch/middleware/remote_ip.rb:79:in `call'
+actionpack (5.1.7) lib/action_dispatch/middleware/request_id.rb:25:in `call'
+rack (2.0.8) lib/rack/runtime.rb:22:in `call'
+activesupport (5.1.7) lib/active_support/cache/strategy/local_cache_middleware.rb:27:in `call'
+actionpack (5.1.7) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.7) lib/action_dispatch/middleware/static.rb:125:in `call'
+rack (2.0.8) lib/rack/sendfile.rb:111:in `call'
+rack-cors (1.1.1) lib/rack/cors.rb:100:in `call'
+railties (5.1.7) lib/rails/engine.rb:522:in `call'
+puma (3.12.2) lib/puma/configuration.rb:227:in `call'
+puma (3.12.2) lib/puma/server.rb:674:in `handle_request'
+puma (3.12.2) lib/puma/server.rb:476:in `process_client'
+puma (3.12.2) lib/puma/server.rb:334:in `block in run'
+puma (3.12.2) lib/puma/thread_pool.rb:135:in `block in spawn_thread'
+  
+ActionController::RoutingError (No route matches [GET] "/static/js/0.chunk.js.map"):
+actionpack (5.1.7) lib/action_dispatch/middleware/debug_exceptions.rb:63:in `call'
+actionpack (5.1.7) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.1.7) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.1.7) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.1.7) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.1.7) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.1.7) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.1.7) lib/rails/rack/logger.rb:24:in `call'
+actionpack (5.1.7) lib/action_dispatch/middleware/remote_ip.rb:79:in `call'
+actionpack (5.1.7) lib/action_dispatch/middleware/request_id.rb:25:in `call'
+rack (2.0.8) lib/rack/runtime.rb:22:in `call'
+activesupport (5.1.7) lib/active_support/cache/strategy/local_cache_middleware.rb:27:in `call'
+actionpack (5.1.7) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.7) lib/action_dispatch/middleware/static.rb:125:in `call'
+rack (2.0.8) lib/rack/sendfile.rb:111:in `call'
+rack-cors (1.1.1) lib/rack/cors.rb:100:in `call'
+railties (5.1.7) lib/rails/engine.rb:522:in `call'
+puma (3.12.2) lib/puma/configuration.rb:227:in `call'
+puma (3.12.2) lib/puma/server.rb:674:in `handle_request'
+puma (3.12.2) lib/puma/server.rb:476:in `process_client'
+puma (3.12.2) lib/puma/server.rb:334:in `block in run'
+puma (3.12.2) lib/puma/thread_pool.rb:135:in `block in spawn_thread'
+  
+actionpack (5.1.7) lib/action_dispatch/middleware/debug_exceptions.rb:63:in `call'
+actionpack (5.1.7) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.1.7) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.1.7) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.1.7) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.1.7) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.1.7) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.1.7) lib/rails/rack/logger.rb:24:in `call'
+actionpack (5.1.7) lib/action_dispatch/middleware/remote_ip.rb:79:in `call'
+actionpack (5.1.7) lib/action_dispatch/middleware/request_id.rb:25:in `call'
+rack (2.0.8) lib/rack/runtime.rb:22:in `call'
+activesupport (5.1.7) lib/active_support/cache/strategy/local_cache_middleware.rb:27:in `call'
+actionpack (5.1.7) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.7) lib/action_dispatch/middleware/static.rb:125:in `call'
+rack (2.0.8) lib/rack/sendfile.rb:111:in `call'
+rack-cors (1.1.1) lib/rack/cors.rb:100:in `call'
+railties (5.1.7) lib/rails/engine.rb:522:in `call'
+puma (3.12.2) lib/puma/configuration.rb:227:in `call'
+puma (3.12.2) lib/puma/server.rb:674:in `handle_request'
+puma (3.12.2) lib/puma/server.rb:476:in `process_client'
+puma (3.12.2) lib/puma/server.rb:334:in `block in run'
+puma (3.12.2) lib/puma/thread_pool.rb:135:in `block in spawn_thread'
+Processing by Rails::WelcomeController#index as HTML
+  Rendering /home/aswanth/.rvm/gems/ruby-2.3.8/gems/railties-5.1.7/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /home/aswanth/.rvm/gems/ruby-2.3.8/gems/railties-5.1.7/lib/rails/templates/rails/welcome/index.html.erb (4.2ms)
+Completed 200 OK in 22ms (Views: 7.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/favicon.ico" for ::1 at 2020-01-03 16:24:19 +0530
+  
+ActionController::RoutingError (No route matches [GET] "/favicon.ico"):
+  
+actionpack (5.1.7) lib/action_dispatch/middleware/debug_exceptions.rb:63:in `call'
+actionpack (5.1.7) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.1.7) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.1.7) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.1.7) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.1.7) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.1.7) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.1.7) lib/rails/rack/logger.rb:24:in `call'
+actionpack (5.1.7) lib/action_dispatch/middleware/remote_ip.rb:79:in `call'
+actionpack (5.1.7) lib/action_dispatch/middleware/request_id.rb:25:in `call'
+rack (2.0.8) lib/rack/runtime.rb:22:in `call'
+activesupport (5.1.7) lib/active_support/cache/strategy/local_cache_middleware.rb:27:in `call'
+actionpack (5.1.7) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.7) lib/action_dispatch/middleware/static.rb:125:in `call'
+rack (2.0.8) lib/rack/sendfile.rb:111:in `call'
+rack-cors (1.1.1) lib/rack/cors.rb:100:in `call'
+railties (5.1.7) lib/rails/engine.rb:522:in `call'
+puma (3.12.2) lib/puma/configuration.rb:227:in `call'
+puma (3.12.2) lib/puma/server.rb:674:in `handle_request'
+puma (3.12.2) lib/puma/server.rb:476:in `process_client'
+puma (3.12.2) lib/puma/server.rb:334:in `block in run'
+puma (3.12.2) lib/puma/thread_pool.rb:135:in `block in spawn_thread'
+Started GET "/api/v1/ideas.json" for ::1 at 2020-01-03 16:25:28 +0530
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by Api::V1::IdeasController#index as JSON
+  [1m[36mIdea Load (0.5ms)[0m  [1m[34mSELECT "ideas".* FROM "ideas"[0m
+Completed 200 OK in 225ms (Views: 218.0ms | ActiveRecord: 2.5ms)
+
+
+Started GET "/api/v1/ideas.json" for ::1 at 2020-01-03 16:25:31 +0530
+Processing by Api::V1::IdeasController#index as JSON
+  [1m[36mIdea Load (0.2ms)[0m  [1m[34mSELECT "ideas".* FROM "ideas"[0m
+Completed 200 OK in 13ms (Views: 12.1ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/api/v1/ideas.json" for ::1 at 2020-01-03 16:32:27 +0530
+Processing by Api::V1::IdeasController#index as JSON
+  [1m[36mIdea Load (0.2ms)[0m  [1m[34mSELECT "ideas".* FROM "ideas"[0m
+Completed 200 OK in 2ms (Views: 1.2ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/" for ::1 at 2020-01-03 16:34:35 +0530
+Processing by Rails::WelcomeController#index as HTML
+  Rendering /home/aswanth/.rvm/gems/ruby-2.3.8/gems/railties-5.1.7/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /home/aswanth/.rvm/gems/ruby-2.3.8/gems/railties-5.1.7/lib/rails/templates/rails/welcome/index.html.erb (3.9ms)
+Completed 200 OK in 9ms (Views: 8.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/favicon.ico" for ::1 at 2020-01-03 16:34:36 +0530
+  
+ActionController::RoutingError (No route matches [GET] "/favicon.ico"):
+  
+actionpack (5.1.7) lib/action_dispatch/middleware/debug_exceptions.rb:63:in `call'
+actionpack (5.1.7) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.1.7) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.1.7) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.1.7) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.1.7) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.1.7) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.1.7) lib/rails/rack/logger.rb:24:in `call'
+actionpack (5.1.7) lib/action_dispatch/middleware/remote_ip.rb:79:in `call'
+actionpack (5.1.7) lib/action_dispatch/middleware/request_id.rb:25:in `call'
+rack (2.0.8) lib/rack/runtime.rb:22:in `call'
+activesupport (5.1.7) lib/active_support/cache/strategy/local_cache_middleware.rb:27:in `call'
+actionpack (5.1.7) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.7) lib/action_dispatch/middleware/static.rb:125:in `call'
+rack (2.0.8) lib/rack/sendfile.rb:111:in `call'
+rack-cors (1.1.1) lib/rack/cors.rb:100:in `call'
+railties (5.1.7) lib/rails/engine.rb:522:in `call'
+puma (3.12.2) lib/puma/configuration.rb:227:in `call'
+puma (3.12.2) lib/puma/server.rb:674:in `handle_request'
+puma (3.12.2) lib/puma/server.rb:476:in `process_client'
+puma (3.12.2) lib/puma/server.rb:334:in `block in run'
+puma (3.12.2) lib/puma/thread_pool.rb:135:in `block in spawn_thread'
+Started GET "/api" for ::1 at 2020-01-03 16:34:41 +0530
+  
+ActionController::RoutingError (No route matches [GET] "/api"):
+  
+actionpack (5.1.7) lib/action_dispatch/middleware/debug_exceptions.rb:63:in `call'
+actionpack (5.1.7) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.1.7) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.1.7) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.1.7) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.1.7) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.1.7) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.1.7) lib/rails/rack/logger.rb:24:in `call'
+actionpack (5.1.7) lib/action_dispatch/middleware/remote_ip.rb:79:in `call'
+actionpack (5.1.7) lib/action_dispatch/middleware/request_id.rb:25:in `call'
+rack (2.0.8) lib/rack/runtime.rb:22:in `call'
+activesupport (5.1.7) lib/active_support/cache/strategy/local_cache_middleware.rb:27:in `call'
+actionpack (5.1.7) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.7) lib/action_dispatch/middleware/static.rb:125:in `call'
+rack (2.0.8) lib/rack/sendfile.rb:111:in `call'
+rack-cors (1.1.1) lib/rack/cors.rb:100:in `call'
+railties (5.1.7) lib/rails/engine.rb:522:in `call'
+puma (3.12.2) lib/puma/configuration.rb:227:in `call'
+puma (3.12.2) lib/puma/server.rb:674:in `handle_request'
+puma (3.12.2) lib/puma/server.rb:476:in `process_client'
+puma (3.12.2) lib/puma/server.rb:334:in `block in run'
+puma (3.12.2) lib/puma/thread_pool.rb:135:in `block in spawn_thread'
+Started GET "/api/ideas" for ::1 at 2020-01-03 16:34:48 +0530
+  
+ActionController::RoutingError (No route matches [GET] "/api/ideas"):
+  
+actionpack (5.1.7) lib/action_dispatch/middleware/debug_exceptions.rb:63:in `call'
+actionpack (5.1.7) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.1.7) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.1.7) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.1.7) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.1.7) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.1.7) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.1.7) lib/rails/rack/logger.rb:24:in `call'
+actionpack (5.1.7) lib/action_dispatch/middleware/remote_ip.rb:79:in `call'
+actionpack (5.1.7) lib/action_dispatch/middleware/request_id.rb:25:in `call'
+rack (2.0.8) lib/rack/runtime.rb:22:in `call'
+activesupport (5.1.7) lib/active_support/cache/strategy/local_cache_middleware.rb:27:in `call'
+actionpack (5.1.7) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.7) lib/action_dispatch/middleware/static.rb:125:in `call'
+rack (2.0.8) lib/rack/sendfile.rb:111:in `call'
+rack-cors (1.1.1) lib/rack/cors.rb:100:in `call'
+railties (5.1.7) lib/rails/engine.rb:522:in `call'
+puma (3.12.2) lib/puma/configuration.rb:227:in `call'
+puma (3.12.2) lib/puma/server.rb:674:in `handle_request'
+puma (3.12.2) lib/puma/server.rb:476:in `process_client'
+puma (3.12.2) lib/puma/server.rb:334:in `block in run'
+puma (3.12.2) lib/puma/thread_pool.rb:135:in `block in spawn_thread'
+Started GET "/api/v1/ideas" for ::1 at 2020-01-03 16:34:55 +0530
+Processing by Api::V1::IdeasController#index as HTML
+  [1m[36mIdea Load (1.4ms)[0m  [1m[34mSELECT "ideas".* FROM "ideas"[0m
+Completed 200 OK in 18ms (Views: 15.3ms | ActiveRecord: 1.4ms)
+
+
+Started GET "/api/v1/ideas.json" for ::1 at 2020-01-03 16:36:41 +0530
+Processing by Api::V1::IdeasController#index as JSON
+  [1m[36mIdea Load (0.3ms)[0m  [1m[34mSELECT "ideas".* FROM "ideas"[0m
+Completed 200 OK in 3ms (Views: 2.8ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/api/v1/ideas.json" for ::1 at 2020-01-03 17:26:01 +0530
+Processing by Api::V1::IdeasController#index as JSON
+  [1m[36mIdea Load (0.1ms)[0m  [1m[34mSELECT "ideas".* FROM "ideas"[0m
+Completed 200 OK in 13ms (Views: 10.3ms | ActiveRecord: 1.0ms)
+
+
+Started POST "/api/v1/ideas" for ::1 at 2020-01-03 17:26:05 +0530
+Processing by Api::V1::IdeasController#create as HTML
+  Parameters: {"idea"=>{"title"=>"New title", "body"=>"New body"}}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.7ms)[0m  [1m[32mINSERT INTO "ideas" ("title", "body", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["title", "New title"], ["body", "New body"], ["created_at", "2020-01-03 11:56:05.355664"], ["updated_at", "2020-01-03 11:56:05.355664"]]
+  [1m[35m (125.7ms)[0m  [1m[36mcommit transaction[0m
+Completed 200 OK in 135ms (Views: 1.1ms | ActiveRecord: 126.5ms)
+
+
+Started GET "/api/v1/ideas.json" for ::1 at 2020-01-03 17:26:08 +0530
+Processing by Api::V1::IdeasController#index as JSON
+  [1m[36mIdea Load (0.2ms)[0m  [1m[34mSELECT "ideas".* FROM "ideas"[0m
+Completed 200 OK in 2ms (Views: 1.9ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/api/v1/ideas.json" for ::1 at 2020-01-03 17:27:54 +0530
+Processing by Api::V1::IdeasController#index as JSON
+  [1m[36mIdea Load (0.2ms)[0m  [1m[34mSELECT "ideas".* FROM "ideas" ORDER BY created_at DESC[0m
+Completed 200 OK in 17ms (Views: 13.8ms | ActiveRecord: 1.5ms)
+
+
+Started GET "/api/v1/ideas.json" for ::1 at 2020-01-03 17:28:56 +0530
+Processing by Api::V1::IdeasController#index as JSON
+  [1m[36mIdea Load (0.3ms)[0m  [1m[34mSELECT "ideas".* FROM "ideas" ORDER BY created_at DESC[0m
+Completed 200 OK in 5ms (Views: 4.2ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/api/v1/ideas.json" for ::1 at 2020-01-03 17:29:48 +0530
+Processing by Api::V1::IdeasController#index as JSON
+  [1m[36mIdea Load (0.3ms)[0m  [1m[34mSELECT "ideas".* FROM "ideas" ORDER BY created_at DESC[0m
+Completed 200 OK in 5ms (Views: 4.4ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/api/v1/ideas.json" for ::1 at 2020-01-03 17:41:51 +0530
+Processing by Api::V1::IdeasController#index as JSON
+  [1m[36mIdea Load (0.3ms)[0m  [1m[34mSELECT "ideas".* FROM "ideas" ORDER BY created_at DESC[0m
+Completed 200 OK in 3ms (Views: 2.2ms | ActiveRecord: 0.3ms)
+
+
+Started POST "/api/v1/ideas" for ::1 at 2020-01-03 17:41:54 +0530
+Processing by Api::V1::IdeasController#create as HTML
+  Parameters: {"idea"=>{"title"=>"New title", "body"=>"New body"}}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "ideas" ("title", "body", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["title", "New title"], ["body", "New body"], ["created_at", "2020-01-03 12:11:54.108035"], ["updated_at", "2020-01-03 12:11:54.108035"]]
+  [1m[35m (67.2ms)[0m  [1m[36mcommit transaction[0m
+Completed 200 OK in 72ms (Views: 0.4ms | ActiveRecord: 67.7ms)
+
+
+Started GET "/api/v1/ideas.json" for ::1 at 2020-01-03 17:47:29 +0530
+Processing by Api::V1::IdeasController#index as JSON
+  [1m[36mIdea Load (0.2ms)[0m  [1m[34mSELECT "ideas".* FROM "ideas" ORDER BY created_at DESC[0m
+Completed 200 OK in 2ms (Views: 1.4ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/api/v1/ideas.json" for ::1 at 2020-01-03 17:47:36 +0530
+Processing by Api::V1::IdeasController#index as JSON
+  [1m[36mIdea Load (0.2ms)[0m  [1m[34mSELECT "ideas".* FROM "ideas" ORDER BY created_at DESC[0m
+Completed 200 OK in 2ms (Views: 1.6ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/api/v1/ideas.json" for ::1 at 2020-01-03 17:47:55 +0530
+Processing by Api::V1::IdeasController#index as JSON
+  [1m[36mIdea Load (0.2ms)[0m  [1m[34mSELECT "ideas".* FROM "ideas" ORDER BY created_at DESC[0m
+Completed 200 OK in 2ms (Views: 1.5ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/api/v1/ideas.json" for ::1 at 2020-01-03 17:52:21 +0530
+Processing by Api::V1::IdeasController#index as JSON
+  [1m[36mIdea Load (0.6ms)[0m  [1m[34mSELECT "ideas".* FROM "ideas" ORDER BY created_at DESC[0m
+Completed 200 OK in 4ms (Views: 3.3ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/api/v1/ideas.json" for ::1 at 2020-01-03 17:53:34 +0530
+Processing by Api::V1::IdeasController#index as JSON
+  [1m[36mIdea Load (0.3ms)[0m  [1m[34mSELECT "ideas".* FROM "ideas" ORDER BY created_at DESC[0m
+Completed 200 OK in 3ms (Views: 2.3ms | ActiveRecord: 0.3ms)
+
+
+Started POST "/api/v1/ideas" for ::1 at 2020-01-03 17:53:40 +0530
+Processing by Api::V1::IdeasController#create as HTML
+  Parameters: {"idea"=>{"title"=>"New title", "body"=>"New body"}}
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (1.0ms)[0m  [1m[32mINSERT INTO "ideas" ("title", "body", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["title", "New title"], ["body", "New body"], ["created_at", "2020-01-03 12:23:40.875970"], ["updated_at", "2020-01-03 12:23:40.875970"]]
+  [1m[35m (87.6ms)[0m  [1m[36mcommit transaction[0m
+Completed 200 OK in 103ms (Views: 1.3ms | ActiveRecord: 88.8ms)
+
+
+Started GET "/api/v1/ideas.json" for ::1 at 2020-01-03 17:57:53 +0530
+Processing by Api::V1::IdeasController#index as JSON
+  [1m[36mIdea Load (0.3ms)[0m  [1m[34mSELECT "ideas".* FROM "ideas" ORDER BY created_at DESC[0m
+Completed 200 OK in 4ms (Views: 3.0ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/api/v1/ideas.json" for ::1 at 2020-01-03 17:59:10 +0530
+Processing by Api::V1::IdeasController#index as JSON
+  [1m[36mIdea Load (0.2ms)[0m  [1m[34mSELECT "ideas".* FROM "ideas" ORDER BY created_at DESC[0m
+Completed 200 OK in 3ms (Views: 2.4ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/api/v1/ideas.json" for ::1 at 2020-01-03 17:59:58 +0530
+Processing by Api::V1::IdeasController#index as JSON
+  [1m[36mIdea Load (0.2ms)[0m  [1m[34mSELECT "ideas".* FROM "ideas" ORDER BY created_at DESC[0m
+Completed 200 OK in 3ms (Views: 2.6ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/api/v1/ideas.json" for ::1 at 2020-01-03 18:00:01 +0530
+Processing by Api::V1::IdeasController#index as JSON
+  [1m[36mIdea Load (0.2ms)[0m  [1m[34mSELECT "ideas".* FROM "ideas" ORDER BY created_at DESC[0m
+Completed 200 OK in 3ms (Views: 2.8ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/api/v1/ideas.json" for ::1 at 2020-01-03 18:00:10 +0530
+Processing by Api::V1::IdeasController#index as JSON
+  [1m[36mIdea Load (0.3ms)[0m  [1m[34mSELECT "ideas".* FROM "ideas" ORDER BY created_at DESC[0m
+Completed 200 OK in 8ms (Views: 7.1ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/api/v1/ideas.json" for ::1 at 2020-01-03 18:00:15 +0530
+Processing by Api::V1::IdeasController#index as JSON
+  [1m[36mIdea Load (0.2ms)[0m  [1m[34mSELECT "ideas".* FROM "ideas" ORDER BY created_at DESC[0m
+Completed 200 OK in 3ms (Views: 2.5ms | ActiveRecord: 0.2ms)
+
+
+Started POST "/api/v1/ideas" for ::1 at 2020-01-03 18:00:19 +0530
+Processing by Api::V1::IdeasController#create as HTML
+  Parameters: {"idea"=>{"title"=>"", "body"=>""}}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (1.8ms)[0m  [1m[32mINSERT INTO "ideas" ("title", "body", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["title", ""], ["body", ""], ["created_at", "2020-01-03 12:30:19.224648"], ["updated_at", "2020-01-03 12:30:19.224648"]]
+  [1m[35m (198.6ms)[0m  [1m[36mcommit transaction[0m
+Completed 200 OK in 207ms (Views: 0.5ms | ActiveRecord: 200.5ms)
+
+
+Started GET "/api/v1/ideas.json" for ::1 at 2020-01-03 18:00:47 +0530
+Processing by Api::V1::IdeasController#index as JSON
+  [1m[36mIdea Load (0.7ms)[0m  [1m[34mSELECT "ideas".* FROM "ideas" ORDER BY created_at DESC[0m
+Completed 200 OK in 4ms (Views: 2.8ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/api/v1/ideas.json" for ::1 at 2020-01-03 18:00:51 +0530
+Processing by Api::V1::IdeasController#index as JSON
+  [1m[36mIdea Load (0.3ms)[0m  [1m[34mSELECT "ideas".* FROM "ideas" ORDER BY created_at DESC[0m
+Completed 200 OK in 3ms (Views: 2.7ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/api/v1/ideas.json" for ::1 at 2020-01-03 18:00:54 +0530
+Processing by Api::V1::IdeasController#index as JSON
+  [1m[36mIdea Load (0.2ms)[0m  [1m[34mSELECT "ideas".* FROM "ideas" ORDER BY created_at DESC[0m
+Completed 200 OK in 4ms (Views: 3.2ms | ActiveRecord: 0.2ms)
+
+
+Started POST "/api/v1/ideas" for ::1 at 2020-01-03 18:00:56 +0530
+Processing by Api::V1::IdeasController#create as HTML
+  Parameters: {"idea"=>{"title"=>"", "body"=>""}}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.7ms)[0m  [1m[32mINSERT INTO "ideas" ("title", "body", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["title", ""], ["body", ""], ["created_at", "2020-01-03 12:30:56.039764"], ["updated_at", "2020-01-03 12:30:56.039764"]]
+  [1m[35m (164.5ms)[0m  [1m[36mcommit transaction[0m
+Completed 200 OK in 170ms (Views: 1.3ms | ActiveRecord: 165.3ms)
+
+
+Started POST "/api/v1/ideas" for ::1 at 2020-01-03 18:02:48 +0530
+Processing by Api::V1::IdeasController#create as HTML
+  Parameters: {"idea"=>{"title"=>"", "body"=>""}}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "ideas" ("title", "body", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["title", ""], ["body", ""], ["created_at", "2020-01-03 12:32:48.164382"], ["updated_at", "2020-01-03 12:32:48.164382"]]
+  [1m[35m (82.9ms)[0m  [1m[36mcommit transaction[0m
+Completed 200 OK in 92ms (Views: 1.3ms | ActiveRecord: 83.3ms)
+
+
+Started GET "/api/v1/ideas.json" for ::1 at 2020-01-03 18:03:04 +0530
+Processing by Api::V1::IdeasController#index as JSON
+  [1m[36mIdea Load (0.3ms)[0m  [1m[34mSELECT "ideas".* FROM "ideas" ORDER BY created_at DESC[0m
+Completed 200 OK in 4ms (Views: 3.3ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/api/v1/ideas.json" for ::1 at 2020-01-03 18:03:37 +0530
+Processing by Api::V1::IdeasController#index as JSON
+  [1m[36mIdea Load (0.2ms)[0m  [1m[34mSELECT "ideas".* FROM "ideas" ORDER BY created_at DESC[0m
+Completed 200 OK in 3ms (Views: 2.9ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/api/v1/ideas.json" for ::1 at 2020-01-03 18:19:55 +0530
+Processing by Api::V1::IdeasController#index as JSON
+  [1m[36mIdea Load (0.3ms)[0m  [1m[34mSELECT "ideas".* FROM "ideas" ORDER BY created_at DESC[0m
+Completed 200 OK in 52ms (Views: 40.8ms | ActiveRecord: 2.5ms)
+
+
+Started GET "/api/v1/ideas.json" for ::1 at 2020-01-03 18:20:03 +0530
+Processing by Api::V1::IdeasController#index as JSON
+  [1m[36mIdea Load (0.9ms)[0m  [1m[34mSELECT "ideas".* FROM "ideas" ORDER BY created_at DESC[0m
+Completed 200 OK in 14ms (Views: 12.3ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/api/v1/ideas.json" for ::1 at 2020-01-03 18:20:06 +0530
+Processing by Api::V1::IdeasController#index as JSON
+  [1m[36mIdea Load (0.7ms)[0m  [1m[34mSELECT "ideas".* FROM "ideas" ORDER BY created_at DESC[0m
+Completed 200 OK in 5ms (Views: 4.3ms | ActiveRecord: 0.7ms)
+
+
+Started POST "/api/v1/ideas" for ::1 at 2020-01-03 18:20:08 +0530
+Processing by Api::V1::IdeasController#create as HTML
+  Parameters: {"idea"=>{"title"=>"", "body"=>""}}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.8ms)[0m  [1m[32mINSERT INTO "ideas" ("title", "body", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["title", ""], ["body", ""], ["created_at", "2020-01-03 12:50:08.082036"], ["updated_at", "2020-01-03 12:50:08.082036"]]
+  [1m[35m (128.5ms)[0m  [1m[36mcommit transaction[0m
+Completed 200 OK in 132ms (Views: 0.5ms | ActiveRecord: 129.4ms)
+
+
+Started GET "/api/v1/ideas.json" for ::1 at 2020-01-03 18:20:11 +0530
+Processing by Api::V1::IdeasController#index as JSON
+  [1m[36mIdea Load (0.3ms)[0m  [1m[34mSELECT "ideas".* FROM "ideas" ORDER BY created_at DESC[0m
+Completed 200 OK in 4ms (Views: 3.9ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/api/v1/ideas.json" for ::1 at 2020-01-03 18:22:41 +0530
+Processing by Api::V1::IdeasController#index as JSON
+  [1m[36mIdea Load (0.2ms)[0m  [1m[34mSELECT "ideas".* FROM "ideas" ORDER BY created_at DESC[0m
+Completed 200 OK in 31ms (Views: 25.9ms | ActiveRecord: 2.7ms)
+
+
+Started POST "/api/v1/ideas" for ::1 at 2020-01-03 18:22:43 +0530
+Processing by Api::V1::IdeasController#create as HTML
+  Parameters: {"idea"=>{"title"=>"", "body"=>""}}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (1.4ms)[0m  [1m[32mINSERT INTO "ideas" ("title", "body", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["title", ""], ["body", ""], ["created_at", "2020-01-03 12:52:43.250699"], ["updated_at", "2020-01-03 12:52:43.250699"]]
+  [1m[35m (198.1ms)[0m  [1m[36mcommit transaction[0m
+Completed 200 OK in 207ms (Views: 1.1ms | ActiveRecord: 199.5ms)
+
+
+Started GET "/api/v1/ideas.json" for ::1 at 2020-01-03 18:23:29 +0530
+Processing by Api::V1::IdeasController#index as JSON
+  [1m[36mIdea Load (0.2ms)[0m  [1m[34mSELECT "ideas".* FROM "ideas" ORDER BY created_at DESC[0m
+Completed 200 OK in 3ms (Views: 2.3ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/api/v1/ideas.json" for ::1 at 2020-01-03 18:23:35 +0530
+Processing by Api::V1::IdeasController#index as JSON
+  [1m[36mIdea Load (0.4ms)[0m  [1m[34mSELECT "ideas".* FROM "ideas" ORDER BY created_at DESC[0m
+Completed 200 OK in 12ms (Views: 11.5ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/api/v1/ideas.json" for ::1 at 2020-01-03 18:23:36 +0530
+Processing by Api::V1::IdeasController#index as JSON
+  [1m[36mIdea Load (0.3ms)[0m  [1m[34mSELECT "ideas".* FROM "ideas" ORDER BY created_at DESC[0m
+Completed 200 OK in 4ms (Views: 3.5ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/api/v1/ideas.json" for ::1 at 2020-01-03 18:23:37 +0530
+Processing by Api::V1::IdeasController#index as JSON
+  [1m[36mIdea Load (0.2ms)[0m  [1m[34mSELECT "ideas".* FROM "ideas" ORDER BY created_at DESC[0m
+Completed 200 OK in 3ms (Views: 2.8ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/api/v1/ideas.json" for ::1 at 2020-01-03 18:23:38 +0530
+Processing by Api::V1::IdeasController#index as JSON
+  [1m[36mIdea Load (0.3ms)[0m  [1m[34mSELECT "ideas".* FROM "ideas" ORDER BY created_at DESC[0m
+Completed 200 OK in 5ms (Views: 4.6ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/api/v1/ideas.json" for ::1 at 2020-01-03 18:23:39 +0530
+Processing by Api::V1::IdeasController#index as JSON
+  [1m[36mIdea Load (0.2ms)[0m  [1m[34mSELECT "ideas".* FROM "ideas" ORDER BY created_at DESC[0m
+Completed 200 OK in 3ms (Views: 2.5ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/api/v1/ideas.json" for ::1 at 2020-01-03 18:23:39 +0530
+Processing by Api::V1::IdeasController#index as JSON
+  [1m[36mIdea Load (0.3ms)[0m  [1m[34mSELECT "ideas".* FROM "ideas" ORDER BY created_at DESC[0m
+Completed 200 OK in 5ms (Views: 4.6ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/api/v1/ideas.json" for ::1 at 2020-01-03 18:23:48 +0530
+Processing by Api::V1::IdeasController#index as JSON
+  [1m[36mIdea Load (0.3ms)[0m  [1m[34mSELECT "ideas".* FROM "ideas" ORDER BY created_at DESC[0m
+Completed 200 OK in 8ms (Views: 7.4ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/api/v1/ideas.json" for ::1 at 2020-01-03 18:23:48 +0530
+Processing by Api::V1::IdeasController#index as JSON
+  [1m[36mIdea Load (0.2ms)[0m  [1m[34mSELECT "ideas".* FROM "ideas" ORDER BY created_at DESC[0m
+Completed 200 OK in 4ms (Views: 3.0ms | ActiveRecord: 0.2ms)
+
+
+Started POST "/api/v1/ideas" for ::1 at 2020-01-03 18:23:50 +0530
+Processing by Api::V1::IdeasController#create as HTML
+  Parameters: {"idea"=>{"title"=>"", "body"=>""}}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "ideas" ("title", "body", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["title", ""], ["body", ""], ["created_at", "2020-01-03 12:53:50.997443"], ["updated_at", "2020-01-03 12:53:50.997443"]]
+  [1m[35m (100.4ms)[0m  [1m[36mcommit transaction[0m
+Completed 200 OK in 104ms (Views: 0.4ms | ActiveRecord: 100.7ms)
+
+
+Started PUT "/api/v1/ideas/13" for ::1 at 2020-01-03 18:23:54 +0530
+Processing by Api::V1::IdeasController#update as HTML
+  Parameters: {"idea"=>{"title"=>"", "body"=>"Hello "}, "id"=>"13"}
+  [1m[36mIdea Load (0.6ms)[0m  [1m[34mSELECT  "ideas".* FROM "ideas" WHERE "ideas"."id" = ? LIMIT ?[0m  [["id", 13], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (3.0ms)[0m  [1m[33mUPDATE "ideas" SET "body" = ?, "updated_at" = ? WHERE "ideas"."id" = ?[0m  [["body", "Hello "], ["updated_at", "2020-01-03 12:53:54.218883"], ["id", 13]]
+  [1m[35m (94.7ms)[0m  [1m[36mcommit transaction[0m
+Completed 200 OK in 236ms (Views: 1.9ms | ActiveRecord: 98.4ms)
+
+
+Started PUT "/api/v1/ideas/13" for ::1 at 2020-01-03 18:23:57 +0530
+Processing by Api::V1::IdeasController#update as HTML
+  Parameters: {"idea"=>{"title"=>"NEw", "body"=>"Hello "}, "id"=>"13"}
+  [1m[36mIdea Load (0.1ms)[0m  [1m[34mSELECT  "ideas".* FROM "ideas" WHERE "ideas"."id" = ? LIMIT ?[0m  [["id", 13], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[33mUPDATE "ideas" SET "title" = ?, "updated_at" = ? WHERE "ideas"."id" = ?[0m  [["title", "NEw"], ["updated_at", "2020-01-03 12:53:57.049122"], ["id", 13]]
+  [1m[35m (90.9ms)[0m  [1m[36mcommit transaction[0m
+Completed 200 OK in 97ms (Views: 0.4ms | ActiveRecord: 91.4ms)
+
+
+Started POST "/api/v1/ideas" for ::1 at 2020-01-03 18:23:57 +0530
+Processing by Api::V1::IdeasController#create as HTML
+  Parameters: {"idea"=>{"title"=>"", "body"=>""}}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "ideas" ("title", "body", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["title", ""], ["body", ""], ["created_at", "2020-01-03 12:53:57.147002"], ["updated_at", "2020-01-03 12:53:57.147002"]]
+  [1m[35m (84.1ms)[0m  [1m[36mcommit transaction[0m
+Completed 200 OK in 88ms (Views: 0.3ms | ActiveRecord: 84.5ms)
+
+
+Started GET "/api/v1/ideas.json" for ::1 at 2020-01-03 18:24:26 +0530
+Processing by Api::V1::IdeasController#index as JSON
+  [1m[36mIdea Load (0.2ms)[0m  [1m[34mSELECT "ideas".* FROM "ideas" ORDER BY created_at DESC[0m
+Completed 200 OK in 3ms (Views: 3.0ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/api/v1/ideas.json" for ::1 at 2020-01-03 18:26:21 +0530
+Processing by Api::V1::IdeasController#index as JSON
+  [1m[36mIdea Load (0.3ms)[0m  [1m[34mSELECT "ideas".* FROM "ideas" ORDER BY created_at DESC[0m
+Completed 200 OK in 4ms (Views: 3.2ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/api/v1/ideas.json" for ::1 at 2020-01-03 18:26:27 +0530
+Processing by Api::V1::IdeasController#index as JSON
+  [1m[36mIdea Load (0.3ms)[0m  [1m[34mSELECT "ideas".* FROM "ideas" ORDER BY created_at DESC[0m
+Completed 200 OK in 4ms (Views: 3.1ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/api/v1/ideas.json" for ::1 at 2020-01-03 18:27:04 +0530
+Processing by Api::V1::IdeasController#index as JSON
+  [1m[36mIdea Load (0.2ms)[0m  [1m[34mSELECT "ideas".* FROM "ideas" ORDER BY created_at DESC[0m
+Completed 200 OK in 5ms (Views: 4.8ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/api/v1/ideas.json" for ::1 at 2020-01-03 18:29:20 +0530
+Processing by Api::V1::IdeasController#index as JSON
+  [1m[36mIdea Load (0.3ms)[0m  [1m[34mSELECT "ideas".* FROM "ideas" ORDER BY created_at DESC[0m
+Completed 200 OK in 5ms (Views: 4.0ms | ActiveRecord: 0.3ms)
+
+
+Started POST "/api/v1/ideas" for ::1 at 2020-01-03 18:29:22 +0530
+Processing by Api::V1::IdeasController#create as HTML
+  Parameters: {"idea"=>{"title"=>"", "body"=>""}}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "ideas" ("title", "body", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["title", ""], ["body", ""], ["created_at", "2020-01-03 12:59:22.326525"], ["updated_at", "2020-01-03 12:59:22.326525"]]
+  [1m[35m (118.2ms)[0m  [1m[36mcommit transaction[0m
+Completed 200 OK in 122ms (Views: 0.5ms | ActiveRecord: 118.6ms)
+
+
+Started PUT "/api/v1/ideas/15" for ::1 at 2020-01-03 18:29:25 +0530
+Processing by Api::V1::IdeasController#update as HTML
+  Parameters: {"idea"=>{"title"=>"", "body"=>"Hello "}, "id"=>"15"}
+  [1m[36mIdea Load (0.1ms)[0m  [1m[34mSELECT  "ideas".* FROM "ideas" WHERE "ideas"."id" = ? LIMIT ?[0m  [["id", 15], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[33mUPDATE "ideas" SET "body" = ?, "updated_at" = ? WHERE "ideas"."id" = ?[0m  [["body", "Hello "], ["updated_at", "2020-01-03 12:59:25.135151"], ["id", 15]]
+  [1m[35m (85.5ms)[0m  [1m[36mcommit transaction[0m
+Completed 200 OK in 93ms (Views: 0.3ms | ActiveRecord: 86.0ms)
+
+
+Started PUT "/api/v1/ideas/15" for ::1 at 2020-01-03 18:29:31 +0530
+Processing by Api::V1::IdeasController#update as HTML
+  Parameters: {"idea"=>{"title"=>"", "body"=>"Hello "}, "id"=>"15"}
+  [1m[36mIdea Load (0.4ms)[0m  [1m[34mSELECT  "ideas".* FROM "ideas" WHERE "ideas"."id" = ? LIMIT ?[0m  [["id", 15], ["LIMIT", 1]]
+  [1m[35m (0.3ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mcommit transaction[0m
+Completed 200 OK in 19ms (Views: 0.9ms | ActiveRecord: 0.9ms)
+
+
+Started PUT "/api/v1/ideas/15" for ::1 at 2020-01-03 18:29:31 +0530
+Processing by Api::V1::IdeasController#update as HTML
+  Parameters: {"idea"=>{"title"=>"", "body"=>"Hello "}, "id"=>"15"}
+  [1m[36mIdea Load (0.6ms)[0m  [1m[34mSELECT  "ideas".* FROM "ideas" WHERE "ideas"."id" = ? LIMIT ?[0m  [["id", 15], ["LIMIT", 1]]
+  [1m[35m (0.3ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.5ms)[0m  [1m[36mcommit transaction[0m
+Completed 200 OK in 22ms (Views: 1.8ms | ActiveRecord: 1.3ms)
+
+
+Started GET "/api/v1/ideas.json" for ::1 at 2020-01-03 18:29:34 +0530
+Processing by Api::V1::IdeasController#index as JSON
+  [1m[36mIdea Load (0.3ms)[0m  [1m[34mSELECT "ideas".* FROM "ideas" ORDER BY created_at DESC[0m
+Completed 200 OK in 5ms (Views: 4.3ms | ActiveRecord: 0.3ms)
+
+
+Started POST "/api/v1/ideas" for ::1 at 2020-01-03 18:29:36 +0530
+Processing by Api::V1::IdeasController#create as HTML
+  Parameters: {"idea"=>{"title"=>"", "body"=>""}}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (1.1ms)[0m  [1m[32mINSERT INTO "ideas" ("title", "body", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["title", ""], ["body", ""], ["created_at", "2020-01-03 12:59:36.443549"], ["updated_at", "2020-01-03 12:59:36.443549"]]
+  [1m[35m (76.8ms)[0m  [1m[36mcommit transaction[0m
+Completed 200 OK in 81ms (Views: 0.3ms | ActiveRecord: 78.0ms)
+
+
+Started PUT "/api/v1/ideas/16" for ::1 at 2020-01-03 18:29:39 +0530
+Processing by Api::V1::IdeasController#update as HTML
+  Parameters: {"idea"=>{"title"=>"Hello", "body"=>""}, "id"=>"16"}
+  [1m[36mIdea Load (0.2ms)[0m  [1m[34mSELECT  "ideas".* FROM "ideas" WHERE "ideas"."id" = ? LIMIT ?[0m  [["id", 16], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (1.0ms)[0m  [1m[33mUPDATE "ideas" SET "title" = ?, "updated_at" = ? WHERE "ideas"."id" = ?[0m  [["title", "Hello"], ["updated_at", "2020-01-03 12:59:39.838280"], ["id", 16]]
+  [1m[35m (71.5ms)[0m  [1m[36mcommit transaction[0m
+Completed 200 OK in 79ms (Views: 0.8ms | ActiveRecord: 72.8ms)
+
+
+Started PUT "/api/v1/ideas/16" for ::1 at 2020-01-03 18:29:43 +0530
+Processing by Api::V1::IdeasController#update as HTML
+  Parameters: {"idea"=>{"title"=>"Hello", "body"=>"HEkasd"}, "id"=>"16"}
+  [1m[36mIdea Load (0.2ms)[0m  [1m[34mSELECT  "ideas".* FROM "ideas" WHERE "ideas"."id" = ? LIMIT ?[0m  [["id", 16], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.8ms)[0m  [1m[33mUPDATE "ideas" SET "body" = ?, "updated_at" = ? WHERE "ideas"."id" = ?[0m  [["body", "HEkasd"], ["updated_at", "2020-01-03 12:59:43.240095"], ["id", 16]]
+  [1m[35m (150.0ms)[0m  [1m[36mcommit transaction[0m
+Completed 200 OK in 161ms (Views: 1.6ms | ActiveRecord: 151.0ms)
+
+
+Started POST "/api/v1/ideas" for ::1 at 2020-01-03 18:29:43 +0530
+Processing by Api::V1::IdeasController#create as HTML
+  Parameters: {"idea"=>{"title"=>"", "body"=>""}}
+  [1m[35m (0.3ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (3.8ms)[0m  [1m[32mINSERT INTO "ideas" ("title", "body", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["title", ""], ["body", ""], ["created_at", "2020-01-03 12:59:43.415002"], ["updated_at", "2020-01-03 12:59:43.415002"]]
+  [1m[35m (202.4ms)[0m  [1m[36mcommit transaction[0m
+Completed 200 OK in 226ms (Views: 2.2ms | ActiveRecord: 206.5ms)
+
+
+Started GET "/api/v1/ideas.json" for ::1 at 2020-01-03 18:29:49 +0530
+Processing by Api::V1::IdeasController#index as JSON
+  [1m[36mIdea Load (0.4ms)[0m  [1m[34mSELECT "ideas".* FROM "ideas" ORDER BY created_at DESC[0m
+Completed 200 OK in 12ms (Views: 11.5ms | ActiveRecord: 0.4ms)
+
+
+Started POST "/api/v1/ideas" for ::1 at 2020-01-03 18:30:18 +0530
+Processing by Api::V1::IdeasController#create as HTML
+  Parameters: {"idea"=>{"title"=>"", "body"=>""}}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "ideas" ("title", "body", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["title", ""], ["body", ""], ["created_at", "2020-01-03 13:00:18.552103"], ["updated_at", "2020-01-03 13:00:18.552103"]]
+  [1m[35m (93.1ms)[0m  [1m[36mcommit transaction[0m
+Completed 200 OK in 105ms (Views: 1.7ms | ActiveRecord: 93.6ms)
+
+
+Started PUT "/api/v1/ideas/18" for ::1 at 2020-01-03 18:30:23 +0530
+Processing by Api::V1::IdeasController#update as HTML
+  Parameters: {"idea"=>{"title"=>"Hi", "body"=>""}, "id"=>"18"}
+  [1m[36mIdea Load (0.4ms)[0m  [1m[34mSELECT  "ideas".* FROM "ideas" WHERE "ideas"."id" = ? LIMIT ?[0m  [["id", 18], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (3.5ms)[0m  [1m[33mUPDATE "ideas" SET "title" = ?, "updated_at" = ? WHERE "ideas"."id" = ?[0m  [["title", "Hi"], ["updated_at", "2020-01-03 13:00:23.989070"], ["id", 18]]
+  [1m[35m (95.4ms)[0m  [1m[36mcommit transaction[0m
+Completed 200 OK in 113ms (Views: 1.1ms | ActiveRecord: 99.5ms)
+
+
+Started PUT "/api/v1/ideas/18" for ::1 at 2020-01-03 18:30:32 +0530
+Processing by Api::V1::IdeasController#update as HTML
+  Parameters: {"idea"=>{"title"=>"Hi", "body"=>"hi"}, "id"=>"18"}
+  [1m[36mIdea Load (0.6ms)[0m  [1m[34mSELECT  "ideas".* FROM "ideas" WHERE "ideas"."id" = ? LIMIT ?[0m  [["id", 18], ["LIMIT", 1]]
+  [1m[35m (0.3ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (4.2ms)[0m  [1m[33mUPDATE "ideas" SET "body" = ?, "updated_at" = ? WHERE "ideas"."id" = ?[0m  [["body", "hi"], ["updated_at", "2020-01-03 13:00:32.112965"], ["id", 18]]
+  [1m[35m (79.9ms)[0m  [1m[36mcommit transaction[0m
+Completed 200 OK in 103ms (Views: 0.4ms | ActiveRecord: 85.0ms)
+
+
+Started GET "/api/v1/ideas.json" for ::1 at 2020-01-03 18:30:33 +0530
+Processing by Api::V1::IdeasController#index as JSON
+  [1m[36mIdea Load (0.3ms)[0m  [1m[34mSELECT "ideas".* FROM "ideas" ORDER BY created_at DESC[0m
+Completed 200 OK in 7ms (Views: 6.2ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/api/v1/ideas.json" for ::1 at 2020-01-03 18:31:59 +0530
+Processing by Api::V1::IdeasController#index as JSON
+  [1m[36mIdea Load (0.3ms)[0m  [1m[34mSELECT "ideas".* FROM "ideas" ORDER BY created_at DESC[0m
+Completed 200 OK in 10ms (Views: 9.2ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/api/v1/ideas.json" for ::1 at 2020-01-03 18:32:02 +0530
+Processing by Api::V1::IdeasController#index as JSON
+  [1m[36mIdea Load (0.3ms)[0m  [1m[34mSELECT "ideas".* FROM "ideas" ORDER BY created_at DESC[0m
+Completed 200 OK in 7ms (Views: 6.2ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/api/v1/ideas.json" for ::1 at 2020-01-03 18:32:07 +0530
+Processing by Api::V1::IdeasController#index as JSON
+  [1m[36mIdea Load (0.3ms)[0m  [1m[34mSELECT "ideas".* FROM "ideas" ORDER BY created_at DESC[0m
+Completed 200 OK in 14ms (Views: 13.7ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/api/v1/ideas.json" for ::1 at 2020-01-03 18:32:28 +0530
+Processing by Api::V1::IdeasController#index as JSON
+  [1m[36mIdea Load (0.4ms)[0m  [1m[34mSELECT "ideas".* FROM "ideas" ORDER BY created_at DESC[0m
+Completed 200 OK in 8ms (Views: 6.9ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/api/v1/ideas.json" for ::1 at 2020-01-03 18:32:37 +0530
+Processing by Api::V1::IdeasController#index as JSON
+  [1m[36mIdea Load (0.3ms)[0m  [1m[34mSELECT "ideas".* FROM "ideas" ORDER BY created_at DESC[0m
+Completed 200 OK in 11ms (Views: 10.1ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/api/v1/ideas.json" for ::1 at 2020-01-03 18:33:32 +0530
+Processing by Api::V1::IdeasController#index as JSON
+  [1m[36mIdea Load (0.3ms)[0m  [1m[34mSELECT "ideas".* FROM "ideas" ORDER BY created_at DESC[0m
+Completed 200 OK in 6ms (Views: 5.6ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/api/v1/ideas.json" for ::1 at 2020-01-03 18:33:41 +0530
+Processing by Api::V1::IdeasController#index as JSON
+  [1m[36mIdea Load (0.3ms)[0m  [1m[34mSELECT "ideas".* FROM "ideas" ORDER BY created_at DESC[0m
+Completed 200 OK in 5ms (Views: 4.8ms | ActiveRecord: 0.3ms)
+
+
+Started POST "/api/v1/ideas" for ::1 at 2020-01-03 18:33:43 +0530
+Processing by Api::V1::IdeasController#create as HTML
+  Parameters: {"idea"=>{"title"=>"", "body"=>""}}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (1.1ms)[0m  [1m[32mINSERT INTO "ideas" ("title", "body", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["title", ""], ["body", ""], ["created_at", "2020-01-03 13:03:43.238413"], ["updated_at", "2020-01-03 13:03:43.238413"]]
+  [1m[35m (153.3ms)[0m  [1m[36mcommit transaction[0m
+Completed 200 OK in 160ms (Views: 1.2ms | ActiveRecord: 154.5ms)
+
+
+Started PUT "/api/v1/ideas/19" for ::1 at 2020-01-03 18:33:47 +0530
+Processing by Api::V1::IdeasController#update as HTML
+  Parameters: {"idea"=>{"title"=>"Hiasd", "body"=>""}, "id"=>"19"}
+  [1m[36mIdea Load (0.3ms)[0m  [1m[34mSELECT  "ideas".* FROM "ideas" WHERE "ideas"."id" = ? LIMIT ?[0m  [["id", 19], ["LIMIT", 1]]
+  [1m[35m (0.3ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (1.9ms)[0m  [1m[33mUPDATE "ideas" SET "title" = ?, "updated_at" = ? WHERE "ideas"."id" = ?[0m  [["title", "Hiasd"], ["updated_at", "2020-01-03 13:03:47.017708"], ["id", 19]]
+  [1m[35m (77.3ms)[0m  [1m[36mcommit transaction[0m
+Completed 200 OK in 92ms (Views: 0.9ms | ActiveRecord: 79.8ms)
+
+
+Started PUT "/api/v1/ideas/19" for ::1 at 2020-01-03 18:33:52 +0530
+Processing by Api::V1::IdeasController#update as HTML
+  Parameters: {"idea"=>{"title"=>"Hiasd", "body"=>"asdasd"}, "id"=>"19"}
+  [1m[36mIdea Load (0.6ms)[0m  [1m[34mSELECT  "ideas".* FROM "ideas" WHERE "ideas"."id" = ? LIMIT ?[0m  [["id", 19], ["LIMIT", 1]]
+  [1m[35m (0.3ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (4.8ms)[0m  [1m[33mUPDATE "ideas" SET "body" = ?, "updated_at" = ? WHERE "ideas"."id" = ?[0m  [["body", "asdasd"], ["updated_at", "2020-01-03 13:03:52.830525"], ["id", 19]]
+  [1m[35m (90.6ms)[0m  [1m[36mcommit transaction[0m
+Completed 200 OK in 116ms (Views: 1.2ms | ActiveRecord: 96.3ms)
+
+
+Started PUT "/api/v1/ideas/19" for ::1 at 2020-01-03 18:33:54 +0530
+Processing by Api::V1::IdeasController#update as HTML
+  Parameters: {"idea"=>{"title"=>"Hiasd", "body"=>"asdasd"}, "id"=>"19"}
+  [1m[36mIdea Load (0.2ms)[0m  [1m[34mSELECT  "ideas".* FROM "ideas" WHERE "ideas"."id" = ? LIMIT ?[0m  [["id", 19], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mcommit transaction[0m
+Completed 200 OK in 6ms (Views: 0.3ms | ActiveRecord: 0.4ms)
+
+
+Started PUT "/api/v1/ideas/19" for ::1 at 2020-01-03 18:33:56 +0530
+Processing by Api::V1::IdeasController#update as HTML
+  Parameters: {"idea"=>{"title"=>"Hiasd", "body"=>"asdasd"}, "id"=>"19"}
+  [1m[36mIdea Load (0.2ms)[0m  [1m[34mSELECT  "ideas".* FROM "ideas" WHERE "ideas"."id" = ? LIMIT ?[0m  [["id", 19], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.2ms)[0m  [1m[36mcommit transaction[0m
+Completed 200 OK in 5ms (Views: 0.4ms | ActiveRecord: 0.5ms)
+
+
+Started PUT "/api/v1/ideas/19" for ::1 at 2020-01-03 18:34:00 +0530
+Processing by Api::V1::IdeasController#update as HTML
+  Parameters: {"idea"=>{"title"=>"Hiasd", "body"=>"asdasd"}, "id"=>"19"}
+  [1m[36mIdea Load (0.4ms)[0m  [1m[34mSELECT  "ideas".* FROM "ideas" WHERE "ideas"."id" = ? LIMIT ?[0m  [["id", 19], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mcommit transaction[0m
+Completed 200 OK in 7ms (Views: 0.7ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/api/v1/ideas.json" for ::1 at 2020-01-03 18:34:27 +0530
+Processing by Api::V1::IdeasController#index as JSON
+  [1m[36mIdea Load (0.3ms)[0m  [1m[34mSELECT "ideas".* FROM "ideas" ORDER BY created_at DESC[0m
+Completed 200 OK in 5ms (Views: 4.8ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/api/v1/ideas.json" for ::1 at 2020-01-03 18:35:57 +0530
+Processing by Api::V1::IdeasController#index as JSON
+  [1m[36mIdea Load (0.3ms)[0m  [1m[34mSELECT "ideas".* FROM "ideas" ORDER BY created_at DESC[0m
+Completed 200 OK in 5ms (Views: 4.8ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/api/v1/ideas.json" for ::1 at 2020-01-03 18:36:09 +0530
+Processing by Api::V1::IdeasController#index as JSON
+  [1m[36mIdea Load (0.3ms)[0m  [1m[34mSELECT "ideas".* FROM "ideas" ORDER BY created_at DESC[0m
+Completed 200 OK in 6ms (Views: 5.2ms | ActiveRecord: 0.3ms)
+
+
+Started POST "/api/v1/ideas" for ::1 at 2020-01-03 18:36:11 +0530
+Processing by Api::V1::IdeasController#create as HTML
+  Parameters: {"idea"=>{"title"=>"", "body"=>""}}
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.9ms)[0m  [1m[32mINSERT INTO "ideas" ("title", "body", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["title", ""], ["body", ""], ["created_at", "2020-01-03 13:06:11.361754"], ["updated_at", "2020-01-03 13:06:11.361754"]]
+  [1m[35m (74.6ms)[0m  [1m[36mcommit transaction[0m
+Completed 200 OK in 81ms (Views: 0.3ms | ActiveRecord: 75.7ms)
+
+
+Started PUT "/api/v1/ideas/20" for ::1 at 2020-01-03 18:36:18 +0530
+Processing by Api::V1::IdeasController#update as HTML
+  Parameters: {"idea"=>{"title"=>"NEw title", "body"=>""}, "id"=>"20"}
+  [1m[36mIdea Load (0.4ms)[0m  [1m[34mSELECT  "ideas".* FROM "ideas" WHERE "ideas"."id" = ? LIMIT ?[0m  [["id", 20], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (1.0ms)[0m  [1m[33mUPDATE "ideas" SET "title" = ?, "updated_at" = ? WHERE "ideas"."id" = ?[0m  [["title", "NEw title"], ["updated_at", "2020-01-03 13:06:18.463290"], ["id", 20]]
+  [1m[35m (184.8ms)[0m  [1m[36mcommit transaction[0m
+Completed 200 OK in 198ms (Views: 2.8ms | ActiveRecord: 186.3ms)
+
+
+Started PUT "/api/v1/ideas/20" for ::1 at 2020-01-03 18:36:24 +0530
+Processing by Api::V1::IdeasController#update as HTML
+  Parameters: {"idea"=>{"title"=>"NEw title", "body"=>"New things"}, "id"=>"20"}
+  [1m[36mIdea Load (0.4ms)[0m  [1m[34mSELECT  "ideas".* FROM "ideas" WHERE "ideas"."id" = ? LIMIT ?[0m  [["id", 20], ["LIMIT", 1]]
+  [1m[35m (0.3ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (1.6ms)[0m  [1m[33mUPDATE "ideas" SET "body" = ?, "updated_at" = ? WHERE "ideas"."id" = ?[0m  [["body", "New things"], ["updated_at", "2020-01-03 13:06:24.563896"], ["id", 20]]
+  [1m[35m (71.2ms)[0m  [1m[36mcommit transaction[0m
+Completed 200 OK in 89ms (Views: 0.7ms | ActiveRecord: 73.5ms)
+
+
+Started POST "/api/v1/ideas" for ::1 at 2020-01-03 18:36:24 +0530
+Processing by Api::V1::IdeasController#create as HTML
+  Parameters: {"idea"=>{"title"=>"", "body"=>""}}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "ideas" ("title", "body", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["title", ""], ["body", ""], ["created_at", "2020-01-03 13:06:24.648088"], ["updated_at", "2020-01-03 13:06:24.648088"]]
+  [1m[35m (79.5ms)[0m  [1m[36mcommit transaction[0m
+Completed 200 OK in 85ms (Views: 0.5ms | ActiveRecord: 79.9ms)
+
+
+Started PUT "/api/v1/ideas/21" for ::1 at 2020-01-03 18:37:37 +0530
+Processing by Api::V1::IdeasController#update as HTML
+  Parameters: {"idea"=>{"title"=>"", "body"=>"asd"}, "id"=>"21"}
+  [1m[36mIdea Load (0.6ms)[0m  [1m[34mSELECT  "ideas".* FROM "ideas" WHERE "ideas"."id" = ? LIMIT ?[0m  [["id", 21], ["LIMIT", 1]]
+  [1m[35m (0.3ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (2.2ms)[0m  [1m[33mUPDATE "ideas" SET "body" = ?, "updated_at" = ? WHERE "ideas"."id" = ?[0m  [["body", "asd"], ["updated_at", "2020-01-03 13:07:37.760868"], ["id", 21]]
+  [1m[35m (93.8ms)[0m  [1m[36mcommit transaction[0m
+Completed 200 OK in 121ms (Views: 1.1ms | ActiveRecord: 96.8ms)
+
+
+Started GET "/api/v1/ideas.json" for ::1 at 2020-01-03 18:37:39 +0530
+Processing by Api::V1::IdeasController#index as JSON
+  [1m[36mIdea Load (0.3ms)[0m  [1m[34mSELECT "ideas".* FROM "ideas" ORDER BY created_at DESC[0m
+Completed 200 OK in 21ms (Views: 20.7ms | ActiveRecord: 0.3ms)
+
+
+Started POST "/api/v1/ideas" for ::1 at 2020-01-03 18:37:43 +0530
+Processing by Api::V1::IdeasController#create as HTML
+  Parameters: {"idea"=>{"title"=>"", "body"=>""}}
+  [1m[35m (0.5ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.6ms)[0m  [1m[32mINSERT INTO "ideas" ("title", "body", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["title", ""], ["body", ""], ["created_at", "2020-01-03 13:07:43.762111"], ["updated_at", "2020-01-03 13:07:43.762111"]]
+  [1m[35m (78.1ms)[0m  [1m[36mcommit transaction[0m
+Completed 200 OK in 86ms (Views: 0.3ms | ActiveRecord: 79.1ms)
+
+
+Started PUT "/api/v1/ideas/22" for ::1 at 2020-01-03 18:37:46 +0530
+Processing by Api::V1::IdeasController#update as HTML
+  Parameters: {"idea"=>{"title"=>"New ", "body"=>""}, "id"=>"22"}
+  [1m[36mIdea Load (0.1ms)[0m  [1m[34mSELECT  "ideas".* FROM "ideas" WHERE "ideas"."id" = ? LIMIT ?[0m  [["id", 22], ["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.8ms)[0m  [1m[33mUPDATE "ideas" SET "title" = ?, "updated_at" = ? WHERE "ideas"."id" = ?[0m  [["title", "New "], ["updated_at", "2020-01-03 13:07:46.034036"], ["id", 22]]
+  [1m[35m (84.9ms)[0m  [1m[36mcommit transaction[0m
+Completed 200 OK in 90ms (Views: 0.5ms | ActiveRecord: 85.8ms)
+
+
+Started PUT "/api/v1/ideas/22" for ::1 at 2020-01-03 18:37:51 +0530
+Processing by Api::V1::IdeasController#update as HTML
+  Parameters: {"idea"=>{"title"=>"New ", "body"=>"NEw"}, "id"=>"22"}
+  [1m[36mIdea Load (0.4ms)[0m  [1m[34mSELECT  "ideas".* FROM "ideas" WHERE "ideas"."id" = ? LIMIT ?[0m  [["id", 22], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (2.9ms)[0m  [1m[33mUPDATE "ideas" SET "body" = ?, "updated_at" = ? WHERE "ideas"."id" = ?[0m  [["body", "NEw"], ["updated_at", "2020-01-03 13:07:51.118736"], ["id", 22]]
+  [1m[35m (97.0ms)[0m  [1m[36mcommit transaction[0m
+Completed 200 OK in 112ms (Views: 1.3ms | ActiveRecord: 100.5ms)
+
+
+Started GET "/api/v1/ideas.json" for ::1 at 2020-01-03 18:37:57 +0530
+Processing by Api::V1::IdeasController#index as JSON
+  [1m[36mIdea Load (0.3ms)[0m  [1m[34mSELECT "ideas".* FROM "ideas" ORDER BY created_at DESC[0m
+Completed 200 OK in 6ms (Views: 5.5ms | ActiveRecord: 0.3ms)
+
+
+Started POST "/api/v1/ideas" for ::1 at 2020-01-03 18:38:00 +0530
+Processing by Api::V1::IdeasController#create as HTML
+  Parameters: {"idea"=>{"title"=>"", "body"=>""}}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.6ms)[0m  [1m[32mINSERT INTO "ideas" ("title", "body", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["title", ""], ["body", ""], ["created_at", "2020-01-03 13:08:00.521922"], ["updated_at", "2020-01-03 13:08:00.521922"]]
+  [1m[35m (188.8ms)[0m  [1m[36mcommit transaction[0m
+Completed 200 OK in 192ms (Views: 0.4ms | ActiveRecord: 189.4ms)
+
+
+Started PUT "/api/v1/ideas/23" for ::1 at 2020-01-03 18:38:06 +0530
+Processing by Api::V1::IdeasController#update as HTML
+  Parameters: {"idea"=>{"title"=>"title", "body"=>""}, "id"=>"23"}
+  [1m[36mIdea Load (0.7ms)[0m  [1m[34mSELECT  "ideas".* FROM "ideas" WHERE "ideas"."id" = ? LIMIT ?[0m  [["id", 23], ["LIMIT", 1]]
+  [1m[35m (0.3ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (5.5ms)[0m  [1m[33mUPDATE "ideas" SET "title" = ?, "updated_at" = ? WHERE "ideas"."id" = ?[0m  [["title", "title"], ["updated_at", "2020-01-03 13:08:06.637797"], ["id", 23]]
+  [1m[35m (85.4ms)[0m  [1m[36mcommit transaction[0m
+Completed 200 OK in 112ms (Views: 1.3ms | ActiveRecord: 91.9ms)
+
+
+Started PUT "/api/v1/ideas/23" for ::1 at 2020-01-03 18:38:11 +0530
+Processing by Api::V1::IdeasController#update as HTML
+  Parameters: {"idea"=>{"title"=>"title", "body"=>"idea"}, "id"=>"23"}
+  [1m[36mIdea Load (0.4ms)[0m  [1m[34mSELECT  "ideas".* FROM "ideas" WHERE "ideas"."id" = ? LIMIT ?[0m  [["id", 23], ["LIMIT", 1]]
+  [1m[35m (0.4ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (2.6ms)[0m  [1m[33mUPDATE "ideas" SET "body" = ?, "updated_at" = ? WHERE "ideas"."id" = ?[0m  [["body", "idea"], ["updated_at", "2020-01-03 13:08:11.310055"], ["id", 23]]
+  [1m[35m (82.5ms)[0m  [1m[36mcommit transaction[0m
+Completed 200 OK in 99ms (Views: 0.5ms | ActiveRecord: 86.0ms)
+
+
+Started GET "/api/v1/ideas.json" for ::1 at 2020-01-03 18:38:13 +0530
+Processing by Api::V1::IdeasController#index as JSON
+  [1m[36mIdea Load (0.3ms)[0m  [1m[34mSELECT "ideas".* FROM "ideas" ORDER BY created_at DESC[0m
+Completed 200 OK in 7ms (Views: 6.3ms | ActiveRecord: 0.3ms)
+
+
+Started POST "/api/v1/ideas" for ::1 at 2020-01-03 18:38:16 +0530
+Processing by Api::V1::IdeasController#create as HTML
+  Parameters: {"idea"=>{"title"=>"", "body"=>""}}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (1.6ms)[0m  [1m[32mINSERT INTO "ideas" ("title", "body", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["title", ""], ["body", ""], ["created_at", "2020-01-03 13:08:16.791402"], ["updated_at", "2020-01-03 13:08:16.791402"]]
+  [1m[35m (71.5ms)[0m  [1m[36mcommit transaction[0m
+Completed 200 OK in 78ms (Views: 0.3ms | ActiveRecord: 73.2ms)
+
+
+Started PUT "/api/v1/ideas/24" for ::1 at 2020-01-03 18:38:22 +0530
+Processing by Api::V1::IdeasController#update as HTML
+  Parameters: {"idea"=>{"title"=>"title", "body"=>""}, "id"=>"24"}
+  [1m[36mIdea Load (0.6ms)[0m  [1m[34mSELECT  "ideas".* FROM "ideas" WHERE "ideas"."id" = ? LIMIT ?[0m  [["id", 24], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (4.7ms)[0m  [1m[33mUPDATE "ideas" SET "title" = ?, "updated_at" = ? WHERE "ideas"."id" = ?[0m  [["title", "title"], ["updated_at", "2020-01-03 13:08:22.700060"], ["id", 24]]
+  [1m[35m (89.9ms)[0m  [1m[36mcommit transaction[0m
+Completed 200 OK in 113ms (Views: 1.8ms | ActiveRecord: 95.4ms)
+
+
+Started PUT "/api/v1/ideas/24" for ::1 at 2020-01-03 18:38:35 +0530
+Processing by Api::V1::IdeasController#update as HTML
+  Parameters: {"idea"=>{"title"=>"title", "body"=>"new idea"}, "id"=>"24"}
+  [1m[36mIdea Load (0.4ms)[0m  [1m[34mSELECT  "ideas".* FROM "ideas" WHERE "ideas"."id" = ? LIMIT ?[0m  [["id", 24], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.9ms)[0m  [1m[33mUPDATE "ideas" SET "body" = ?, "updated_at" = ? WHERE "ideas"."id" = ?[0m  [["body", "new idea"], ["updated_at", "2020-01-03 13:08:35.832925"], ["id", 24]]
+  [1m[35m (189.4ms)[0m  [1m[36mcommit transaction[0m
+Completed 200 OK in 201ms (Views: 0.8ms | ActiveRecord: 190.9ms)
+
+
+Started GET "/api/v1/ideas.json" for ::1 at 2020-01-03 18:38:49 +0530
+Processing by Api::V1::IdeasController#index as JSON
+  [1m[36mIdea Load (0.3ms)[0m  [1m[34mSELECT "ideas".* FROM "ideas" ORDER BY created_at DESC[0m
+Completed 200 OK in 16ms (Views: 15.1ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/api/v1/ideas.json" for ::1 at 2020-01-03 18:39:55 +0530
+Processing by Api::V1::IdeasController#index as JSON
+  [1m[36mIdea Load (0.4ms)[0m  [1m[34mSELECT "ideas".* FROM "ideas" ORDER BY created_at DESC[0m
+Completed 200 OK in 14ms (Views: 11.9ms | ActiveRecord: 0.4ms)
+
+
+Started POST "/api/v1/ideas" for ::1 at 2020-01-03 18:39:56 +0530
+Processing by Api::V1::IdeasController#create as HTML
+  Parameters: {"idea"=>{"title"=>"", "body"=>""}}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.8ms)[0m  [1m[32mINSERT INTO "ideas" ("title", "body", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["title", ""], ["body", ""], ["created_at", "2020-01-03 13:09:56.929709"], ["updated_at", "2020-01-03 13:09:56.929709"]]
+  [1m[35m (129.0ms)[0m  [1m[36mcommit transaction[0m
+Completed 200 OK in 134ms (Views: 0.6ms | ActiveRecord: 129.9ms)
+
+
+Started PUT "/api/v1/ideas/25" for ::1 at 2020-01-03 18:40:05 +0530
+Processing by Api::V1::IdeasController#update as HTML
+  Parameters: {"idea"=>{"title"=>"new1", "body"=>""}, "id"=>"25"}
+  [1m[36mIdea Load (0.6ms)[0m  [1m[34mSELECT  "ideas".* FROM "ideas" WHERE "ideas"."id" = ? LIMIT ?[0m  [["id", 25], ["LIMIT", 1]]
+  [1m[35m (0.3ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (2.3ms)[0m  [1m[33mUPDATE "ideas" SET "title" = ?, "updated_at" = ? WHERE "ideas"."id" = ?[0m  [["title", "new1"], ["updated_at", "2020-01-03 13:10:05.081861"], ["id", 25]]
+  [1m[35m (85.4ms)[0m  [1m[36mcommit transaction[0m
+Completed 200 OK in 108ms (Views: 1.2ms | ActiveRecord: 88.5ms)
+
+
+Started PUT "/api/v1/ideas/25" for ::1 at 2020-01-03 18:40:14 +0530
+Processing by Api::V1::IdeasController#update as HTML
+  Parameters: {"idea"=>{"title"=>"new1", "body"=>"idea1"}, "id"=>"25"}
+  [1m[36mIdea Load (0.2ms)[0m  [1m[34mSELECT  "ideas".* FROM "ideas" WHERE "ideas"."id" = ? LIMIT ?[0m  [["id", 25], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (1.1ms)[0m  [1m[33mUPDATE "ideas" SET "body" = ?, "updated_at" = ? WHERE "ideas"."id" = ?[0m  [["body", "idea1"], ["updated_at", "2020-01-03 13:10:14.682236"], ["id", 25]]
+  [1m[35m (76.2ms)[0m  [1m[36mcommit transaction[0m
+Completed 200 OK in 82ms (Views: 0.3ms | ActiveRecord: 77.5ms)
+
+
+Started PUT "/api/v1/ideas/25" for ::1 at 2020-01-03 18:40:15 +0530
+Processing by Api::V1::IdeasController#update as HTML
+  Parameters: {"idea"=>{"title"=>"new1", "body"=>"idea1"}, "id"=>"25"}
+  [1m[36mIdea Load (0.2ms)[0m  [1m[34mSELECT  "ideas".* FROM "ideas" WHERE "ideas"."id" = ? LIMIT ?[0m  [["id", 25], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mcommit transaction[0m
+Completed 200 OK in 12ms (Views: 1.9ms | ActiveRecord: 0.6ms)
+
+
+Started PUT "/api/v1/ideas/25" for ::1 at 2020-01-03 18:40:19 +0530
+Processing by Api::V1::IdeasController#update as HTML
+  Parameters: {"idea"=>{"title"=>"new1", "body"=>"idea1"}, "id"=>"25"}
+  [1m[36mIdea Load (0.2ms)[0m  [1m[34mSELECT  "ideas".* FROM "ideas" WHERE "ideas"."id" = ? LIMIT ?[0m  [["id", 25], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mcommit transaction[0m
+Completed 200 OK in 24ms (Views: 0.7ms | ActiveRecord: 0.3ms)
+
+
+Started PUT "/api/v1/ideas/25" for ::1 at 2020-01-03 18:43:48 +0530
+Processing by Api::V1::IdeasController#update as HTML
+  Parameters: {"idea"=>{"title"=>"new1", "body"=>"idea1"}, "id"=>"25"}
+  [1m[36mIdea Load (0.4ms)[0m  [1m[34mSELECT  "ideas".* FROM "ideas" WHERE "ideas"."id" = ? LIMIT ?[0m  [["id", 25], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.3ms)[0m  [1m[36mcommit transaction[0m
+Completed 200 OK in 10ms (Views: 1.6ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/api/v1/ideas.json" for ::1 at 2020-01-03 18:43:53 +0530
+Processing by Api::V1::IdeasController#index as JSON
+  [1m[36mIdea Load (0.5ms)[0m  [1m[34mSELECT "ideas".* FROM "ideas" ORDER BY created_at DESC[0m
+Completed 200 OK in 12ms (Views: 11.3ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/api/v1/ideas.json" for ::1 at 2020-01-03 18:44:01 +0530
+Processing by Api::V1::IdeasController#index as JSON
+  [1m[36mIdea Load (0.4ms)[0m  [1m[34mSELECT "ideas".* FROM "ideas" ORDER BY created_at DESC[0m
+Completed 200 OK in 20ms (Views: 10.4ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/api/v1/ideas.json" for ::1 at 2020-01-03 18:45:10 +0530
+Processing by Api::V1::IdeasController#index as JSON
+  [1m[36mIdea Load (0.3ms)[0m  [1m[34mSELECT "ideas".* FROM "ideas" ORDER BY created_at DESC[0m
+Completed 200 OK in 9ms (Views: 8.7ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/api/v1/ideas.json" for ::1 at 2020-01-03 18:46:41 +0530
+Processing by Api::V1::IdeasController#index as JSON
+  [1m[36mIdea Load (0.3ms)[0m  [1m[34mSELECT "ideas".* FROM "ideas" ORDER BY created_at DESC[0m
+Completed 200 OK in 31ms (Views: 30.4ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/api/v1/ideas.json" for ::1 at 2020-01-03 18:46:58 +0530
+Processing by Api::V1::IdeasController#index as JSON
+  [1m[36mIdea Load (0.3ms)[0m  [1m[34mSELECT "ideas".* FROM "ideas" ORDER BY created_at DESC[0m
+Completed 200 OK in 9ms (Views: 7.9ms | ActiveRecord: 0.3ms)
+
+
+Started POST "/api/v1/ideas" for ::1 at 2020-01-03 18:47:12 +0530
+Processing by Api::V1::IdeasController#create as HTML
+  Parameters: {"idea"=>{"title"=>"", "body"=>""}}
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (3.8ms)[0m  [1m[32mINSERT INTO "ideas" ("title", "body", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["title", ""], ["body", ""], ["created_at", "2020-01-03 13:17:12.559716"], ["updated_at", "2020-01-03 13:17:12.559716"]]
+  [1m[35m (103.8ms)[0m  [1m[36mcommit transaction[0m
+Completed 200 OK in 118ms (Views: 1.3ms | ActiveRecord: 107.9ms)
+
+
+Started PUT "/api/v1/ideas/26" for ::1 at 2020-01-03 18:47:17 +0530
+Processing by Api::V1::IdeasController#update as HTML
+  Parameters: {"idea"=>{"title"=>"Newwww", "body"=>""}, "id"=>"26"}
+  [1m[36mIdea Load (0.2ms)[0m  [1m[34mSELECT  "ideas".* FROM "ideas" WHERE "ideas"."id" = ? LIMIT ?[0m  [["id", 26], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.8ms)[0m  [1m[33mUPDATE "ideas" SET "title" = ?, "updated_at" = ? WHERE "ideas"."id" = ?[0m  [["title", "Newwww"], ["updated_at", "2020-01-03 13:17:17.700579"], ["id", 26]]
+  [1m[35m (123.6ms)[0m  [1m[36mcommit transaction[0m
+Completed 200 OK in 133ms (Views: 2.0ms | ActiveRecord: 124.7ms)
+
+
+Started PUT "/api/v1/ideas/26" for ::1 at 2020-01-03 18:47:28 +0530
+Processing by Api::V1::IdeasController#update as HTML
+  Parameters: {"idea"=>{"title"=>"Newwww", "body"=>"very newwww"}, "id"=>"26"}
+  [1m[36mIdea Load (1.4ms)[0m  [1m[34mSELECT  "ideas".* FROM "ideas" WHERE "ideas"."id" = ? LIMIT ?[0m  [["id", 26], ["LIMIT", 1]]
+  [1m[35m (0.3ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (1.7ms)[0m  [1m[33mUPDATE "ideas" SET "body" = ?, "updated_at" = ? WHERE "ideas"."id" = ?[0m  [["body", "very newwww"], ["updated_at", "2020-01-03 13:17:28.582830"], ["id", 26]]
+  [1m[35m (157.6ms)[0m  [1m[36mcommit transaction[0m
+Completed 200 OK in 174ms (Views: 1.8ms | ActiveRecord: 161.0ms)
+
+
+Started GET "/api/v1/ideas.json" for ::1 at 2020-01-03 18:47:32 +0530
+Processing by Api::V1::IdeasController#index as JSON
+  [1m[36mIdea Load (0.3ms)[0m  [1m[34mSELECT "ideas".* FROM "ideas" ORDER BY created_at DESC[0m
+Completed 200 OK in 9ms (Views: 8.7ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/api/v1/ideas.json" for ::1 at 2020-01-03 18:48:41 +0530
+Processing by Api::V1::IdeasController#index as JSON
+  [1m[36mIdea Load (0.3ms)[0m  [1m[34mSELECT "ideas".* FROM "ideas" ORDER BY created_at DESC[0m
+Completed 200 OK in 7ms (Views: 6.4ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/api/v1/ideas.json" for ::1 at 2020-01-03 18:54:11 +0530
+Processing by Api::V1::IdeasController#index as JSON
+  [1m[36mIdea Load (0.5ms)[0m  [1m[34mSELECT "ideas".* FROM "ideas" ORDER BY created_at DESC[0m
+Completed 200 OK in 12ms (Views: 10.7ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/api/v1/ideas.json" for ::1 at 2020-01-03 18:54:13 +0530
+Processing by Api::V1::IdeasController#index as JSON
+  [1m[36mIdea Load (0.4ms)[0m  [1m[34mSELECT "ideas".* FROM "ideas" ORDER BY created_at DESC[0m
+Completed 200 OK in 8ms (Views: 7.0ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/api/v1/ideas.json" for ::1 at 2020-01-03 18:54:15 +0530
+Processing by Api::V1::IdeasController#index as JSON
+  [1m[36mIdea Load (0.4ms)[0m  [1m[34mSELECT "ideas".* FROM "ideas" ORDER BY created_at DESC[0m
+Completed 200 OK in 12ms (Views: 7.7ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/api/v1/ideas.json" for ::1 at 2020-01-03 18:54:16 +0530
+Processing by Api::V1::IdeasController#index as JSON
+  [1m[36mIdea Load (0.4ms)[0m  [1m[34mSELECT "ideas".* FROM "ideas" ORDER BY created_at DESC[0m
+Completed 200 OK in 10ms (Views: 9.3ms | ActiveRecord: 0.4ms)
+
+
+Started PUT "/api/v1/ideas/25" for ::1 at 2020-01-03 18:55:20 +0530
+Processing by Api::V1::IdeasController#update as HTML
+  Parameters: {"idea"=>{"title"=>"new1", "body"=>"idea1"}, "id"=>"25"}
+  [1m[36mIdea Load (1.1ms)[0m  [1m[34mSELECT  "ideas".* FROM "ideas" WHERE "ideas"."id" = ? LIMIT ?[0m  [["id", 25], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mcommit transaction[0m
+Completed 200 OK in 7ms (Views: 0.8ms | ActiveRecord: 1.3ms)
+
+
+Started PUT "/api/v1/ideas/25" for ::1 at 2020-01-03 18:55:22 +0530
+Processing by Api::V1::IdeasController#update as HTML
+  Parameters: {"idea"=>{"title"=>"new1", "body"=>"idea1"}, "id"=>"25"}
+  [1m[36mIdea Load (0.2ms)[0m  [1m[34mSELECT  "ideas".* FROM "ideas" WHERE "ideas"."id" = ? LIMIT ?[0m  [["id", 25], ["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mcommit transaction[0m
+Completed 200 OK in 2ms (Views: 0.3ms | ActiveRecord: 0.3ms)
+
+
+Started PUT "/api/v1/ideas/24" for ::1 at 2020-01-03 18:55:25 +0530
+Processing by Api::V1::IdeasController#update as HTML
+  Parameters: {"idea"=>{"title"=>"title", "body"=>"new idea"}, "id"=>"24"}
+  [1m[36mIdea Load (0.2ms)[0m  [1m[34mSELECT  "ideas".* FROM "ideas" WHERE "ideas"."id" = ? LIMIT ?[0m  [["id", 24], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.2ms)[0m  [1m[36mcommit transaction[0m
+Completed 200 OK in 7ms (Views: 0.9ms | ActiveRecord: 0.6ms)
+
+
+Started PUT "/api/v1/ideas/24" for ::1 at 2020-01-03 18:55:27 +0530
+Processing by Api::V1::IdeasController#update as HTML
+  Parameters: {"idea"=>{"title"=>"title", "body"=>"new idea"}, "id"=>"24"}
+  [1m[36mIdea Load (0.2ms)[0m  [1m[34mSELECT  "ideas".* FROM "ideas" WHERE "ideas"."id" = ? LIMIT ?[0m  [["id", 24], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mcommit transaction[0m
+Completed 200 OK in 9ms (Views: 0.6ms | ActiveRecord: 0.3ms)
+
+
+Started PUT "/api/v1/ideas/24" for ::1 at 2020-01-03 18:55:29 +0530
+Processing by Api::V1::IdeasController#update as HTML
+  Parameters: {"idea"=>{"title"=>"title", "body"=>"new idea"}, "id"=>"24"}
+  [1m[36mIdea Load (0.2ms)[0m  [1m[34mSELECT  "ideas".* FROM "ideas" WHERE "ideas"."id" = ? LIMIT ?[0m  [["id", 24], ["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mcommit transaction[0m
+Completed 200 OK in 2ms (Views: 0.3ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/api/v1/ideas.json" for ::1 at 2020-01-03 18:56:38 +0530
+Processing by Api::V1::IdeasController#index as JSON
+  [1m[36mIdea Load (0.3ms)[0m  [1m[34mSELECT "ideas".* FROM "ideas" ORDER BY created_at DESC[0m
+Completed 200 OK in 9ms (Views: 8.3ms | ActiveRecord: 0.3ms)
+
+
+Started PUT "/api/v1/ideas/21" for ::1 at 2020-01-03 18:57:47 +0530
+Processing by Api::V1::IdeasController#update as HTML
+  Parameters: {"idea"=>{"title"=>"", "body"=>"asd"}, "id"=>"21"}
+  [1m[36mIdea Load (0.3ms)[0m  [1m[34mSELECT  "ideas".* FROM "ideas" WHERE "ideas"."id" = ? LIMIT ?[0m  [["id", 21], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mcommit transaction[0m
+Completed 200 OK in 4ms (Views: 0.5ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/api/v1/ideas.json" for ::1 at 2020-01-03 18:58:10 +0530
+Processing by Api::V1::IdeasController#index as JSON
+  [1m[36mIdea Load (0.3ms)[0m  [1m[34mSELECT "ideas".* FROM "ideas" ORDER BY created_at DESC[0m
+Completed 200 OK in 7ms (Views: 6.0ms | ActiveRecord: 0.3ms)
+
+
+Started PUT "/api/v1/ideas/25" for ::1 at 2020-01-03 18:58:22 +0530
+Processing by Api::V1::IdeasController#update as HTML
+  Parameters: {"idea"=>{"title"=>"new1", "body"=>"idea1"}, "id"=>"25"}
+  [1m[36mIdea Load (0.6ms)[0m  [1m[34mSELECT  "ideas".* FROM "ideas" WHERE "ideas"."id" = ? LIMIT ?[0m  [["id", 25], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.2ms)[0m  [1m[36mcommit transaction[0m
+Completed 200 OK in 8ms (Views: 0.9ms | ActiveRecord: 1.0ms)
+
+
+Started PUT "/api/v1/ideas/25" for ::1 at 2020-01-03 18:58:23 +0530
+Processing by Api::V1::IdeasController#update as HTML
+  Parameters: {"idea"=>{"title"=>"new1", "body"=>"idea1"}, "id"=>"25"}
+  [1m[36mIdea Load (0.7ms)[0m  [1m[34mSELECT  "ideas".* FROM "ideas" WHERE "ideas"."id" = ? LIMIT ?[0m  [["id", 25], ["LIMIT", 1]]
+  [1m[35m (0.4ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.3ms)[0m  [1m[36mcommit transaction[0m
+Completed 200 OK in 15ms (Views: 1.6ms | ActiveRecord: 1.4ms)
+
+
+Started PUT "/api/v1/ideas/25" for ::1 at 2020-01-03 18:58:24 +0530
+Processing by Api::V1::IdeasController#update as HTML
+  Parameters: {"idea"=>{"title"=>"new1", "body"=>"idea1"}, "id"=>"25"}
+  [1m[36mIdea Load (0.9ms)[0m  [1m[34mSELECT  "ideas".* FROM "ideas" WHERE "ideas"."id" = ? LIMIT ?[0m  [["id", 25], ["LIMIT", 1]]
+  [1m[35m (0.3ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mcommit transaction[0m
+Completed 200 OK in 44ms (Views: 1.1ms | ActiveRecord: 1.3ms)
+
+
+Started PUT "/api/v1/ideas/25" for ::1 at 2020-01-03 18:58:35 +0530
+Processing by Api::V1::IdeasController#update as HTML
+  Parameters: {"idea"=>{"title"=>"new1", "body"=>"idea1"}, "id"=>"25"}
+  [1m[36mIdea Load (0.9ms)[0m  [1m[34mSELECT  "ideas".* FROM "ideas" WHERE "ideas"."id" = ? LIMIT ?[0m  [["id", 25], ["LIMIT", 1]]
+  [1m[35m (0.3ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.3ms)[0m  [1m[36mcommit transaction[0m
+Completed 200 OK in 51ms (Views: 2.7ms | ActiveRecord: 1.4ms)
+
+
+Started GET "/api/v1/ideas.json" for ::1 at 2020-01-03 18:59:28 +0530
+Processing by Api::V1::IdeasController#index as JSON
+  [1m[36mIdea Load (0.3ms)[0m  [1m[34mSELECT "ideas".* FROM "ideas" ORDER BY created_at DESC[0m
+Completed 200 OK in 10ms (Views: 9.5ms | ActiveRecord: 0.3ms)
+
+
+Started PUT "/api/v1/ideas/22" for ::1 at 2020-01-03 18:59:33 +0530
+Processing by Api::V1::IdeasController#update as HTML
+  Parameters: {"idea"=>{"title"=>"New ", "body"=>"NEw"}, "id"=>"22"}
+  [1m[36mIdea Load (0.6ms)[0m  [1m[34mSELECT  "ideas".* FROM "ideas" WHERE "ideas"."id" = ? LIMIT ?[0m  [["id", 22], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.2ms)[0m  [1m[36mcommit transaction[0m
+Completed 200 OK in 9ms (Views: 1.4ms | ActiveRecord: 1.0ms)
+
+
+Started PUT "/api/v1/ideas/23" for ::1 at 2020-01-03 18:59:36 +0530
+Processing by Api::V1::IdeasController#update as HTML
+  Parameters: {"idea"=>{"title"=>"title", "body"=>"idea"}, "id"=>"23"}
+  [1m[36mIdea Load (0.2ms)[0m  [1m[34mSELECT  "ideas".* FROM "ideas" WHERE "ideas"."id" = ? LIMIT ?[0m  [["id", 23], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mcommit transaction[0m
+Completed 200 OK in 3ms (Views: 0.3ms | ActiveRecord: 0.4ms)
+
+
+Started PUT "/api/v1/ideas/24" for ::1 at 2020-01-03 18:59:37 +0530
+Processing by Api::V1::IdeasController#update as HTML
+  Parameters: {"idea"=>{"title"=>"title", "body"=>"new idea"}, "id"=>"24"}
+  [1m[36mIdea Load (0.4ms)[0m  [1m[34mSELECT  "ideas".* FROM "ideas" WHERE "ideas"."id" = ? LIMIT ?[0m  [["id", 24], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mcommit transaction[0m
+Completed 200 OK in 4ms (Views: 0.5ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/api/v1/ideas.json" for ::1 at 2020-01-03 19:03:19 +0530
+Processing by Api::V1::IdeasController#index as JSON
+  [1m[36mIdea Load (0.4ms)[0m  [1m[34mSELECT "ideas".* FROM "ideas" ORDER BY created_at DESC[0m
+Completed 200 OK in 28ms (Views: 23.6ms | ActiveRecord: 2.5ms)
+
+
+Started GET "/api/v1/ideas.json" for ::1 at 2020-01-03 19:03:53 +0530
+Processing by Api::V1::IdeasController#index as JSON
+  [1m[36mIdea Load (0.3ms)[0m  [1m[34mSELECT "ideas".* FROM "ideas" ORDER BY created_at DESC[0m
+Completed 200 OK in 8ms (Views: 7.6ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/api/v1/ideas.json" for ::1 at 2020-01-03 19:04:24 +0530
+Processing by Api::V1::IdeasController#index as JSON
+  [1m[36mIdea Load (0.3ms)[0m  [1m[34mSELECT "ideas".* FROM "ideas" ORDER BY created_at DESC[0m
+Completed 200 OK in 7ms (Views: 6.5ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/api/v1/ideas.json" for ::1 at 2020-01-03 19:05:31 +0530
+Processing by Api::V1::IdeasController#index as JSON
+  [1m[36mIdea Load (0.2ms)[0m  [1m[34mSELECT "ideas".* FROM "ideas" ORDER BY created_at DESC[0m
+Completed 200 OK in 6ms (Views: 6.0ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/api/v1/ideas.json" for ::1 at 2020-01-03 19:05:46 +0530
+Processing by Api::V1::IdeasController#index as JSON
+  [1m[36mIdea Load (0.3ms)[0m  [1m[34mSELECT "ideas".* FROM "ideas" ORDER BY created_at DESC[0m
+Completed 200 OK in 8ms (Views: 7.8ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/api/v1/ideas.json" for ::1 at 2020-01-03 19:05:51 +0530
+Processing by Api::V1::IdeasController#index as JSON
+  [1m[36mIdea Load (0.4ms)[0m  [1m[34mSELECT "ideas".* FROM "ideas" ORDER BY created_at DESC[0m
+Completed 200 OK in 12ms (Views: 10.9ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/api/v1/ideas.json" for ::1 at 2020-01-03 19:06:19 +0530
+Processing by Api::V1::IdeasController#index as JSON
+  [1m[36mIdea Load (0.4ms)[0m  [1m[34mSELECT "ideas".* FROM "ideas" ORDER BY created_at DESC[0m
+Completed 200 OK in 13ms (Views: 12.5ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/api/v1/ideas.json" for ::1 at 2020-01-03 19:06:21 +0530
+Processing by Api::V1::IdeasController#index as JSON
+  [1m[36mIdea Load (0.5ms)[0m  [1m[34mSELECT "ideas".* FROM "ideas" ORDER BY created_at DESC[0m
+Completed 200 OK in 8ms (Views: 7.4ms | ActiveRecord: 0.5ms)
+
+
+Started DELETE "/api/v1/ideas/24" for ::1 at 2020-01-03 19:06:23 +0530
+Processing by Api::V1::IdeasController#destroy as HTML
+  Parameters: {"id"=>"24"}
+  [1m[36mIdea Load (0.2ms)[0m  [1m[34mSELECT  "ideas".* FROM "ideas" WHERE "ideas"."id" = ? LIMIT ?[0m  [["id", 24], ["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[31mDELETE FROM "ideas" WHERE "ideas"."id" = ?[0m  [["id", 24]]
+  [1m[35m (100.9ms)[0m  [1m[36mcommit transaction[0m
+Completed 204 No Content in 105ms (ActiveRecord: 101.3ms)
+
+
+Started DELETE "/api/v1/ideas/23" for ::1 at 2020-01-03 19:06:24 +0530
+Processing by Api::V1::IdeasController#destroy as HTML
+  Parameters: {"id"=>"23"}
+  [1m[36mIdea Load (0.6ms)[0m  [1m[34mSELECT  "ideas".* FROM "ideas" WHERE "ideas"."id" = ? LIMIT ?[0m  [["id", 23], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (6.9ms)[0m  [1m[31mDELETE FROM "ideas" WHERE "ideas"."id" = ?[0m  [["id", 23]]
+  [1m[35m (72.7ms)[0m  [1m[36mcommit transaction[0m
+Completed 204 No Content in 91ms (ActiveRecord: 80.3ms)
+
+
+Started DELETE "/api/v1/ideas/22" for ::1 at 2020-01-03 19:06:25 +0530
+Processing by Api::V1::IdeasController#destroy as HTML
+  Parameters: {"id"=>"22"}
+  [1m[36mIdea Load (0.4ms)[0m  [1m[34mSELECT  "ideas".* FROM "ideas" WHERE "ideas"."id" = ? LIMIT ?[0m  [["id", 22], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (1.1ms)[0m  [1m[31mDELETE FROM "ideas" WHERE "ideas"."id" = ?[0m  [["id", 22]]
+  [1m[35m (77.3ms)[0m  [1m[36mcommit transaction[0m
+Completed 204 No Content in 89ms (ActiveRecord: 78.9ms)
+
+
+Started DELETE "/api/v1/ideas/21" for ::1 at 2020-01-03 19:06:25 +0530
+Processing by Api::V1::IdeasController#destroy as HTML
+  Parameters: {"id"=>"21"}
+  [1m[36mIdea Load (0.7ms)[0m  [1m[34mSELECT  "ideas".* FROM "ideas" WHERE "ideas"."id" = ? LIMIT ?[0m  [["id", 21], ["LIMIT", 1]]
+  [1m[35m (0.3ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (3.9ms)[0m  [1m[31mDELETE FROM "ideas" WHERE "ideas"."id" = ?[0m  [["id", 21]]
+  [1m[35m (69.9ms)[0m  [1m[36mcommit transaction[0m
+Completed 204 No Content in 85ms (ActiveRecord: 74.7ms)
+
+
+Started POST "/api/v1/ideas" for ::1 at 2020-01-03 19:07:02 +0530
+Processing by Api::V1::IdeasController#create as HTML
+  Parameters: {"idea"=>{"title"=>"", "body"=>""}}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "ideas" ("title", "body", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["title", ""], ["body", ""], ["created_at", "2020-01-03 13:37:02.303127"], ["updated_at", "2020-01-03 13:37:02.303127"]]
+  [1m[35m (79.0ms)[0m  [1m[36mcommit transaction[0m
+Completed 200 OK in 85ms (Views: 1.6ms | ActiveRecord: 79.4ms)
+
+
+Started PUT "/api/v1/ideas/27" for ::1 at 2020-01-03 19:07:06 +0530
+Processing by Api::V1::IdeasController#update as HTML
+  Parameters: {"idea"=>{"title"=>"asd", "body"=>""}, "id"=>"27"}
+  [1m[36mIdea Load (0.2ms)[0m  [1m[34mSELECT  "ideas".* FROM "ideas" WHERE "ideas"."id" = ? LIMIT ?[0m  [["id", 27], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.8ms)[0m  [1m[33mUPDATE "ideas" SET "title" = ?, "updated_at" = ? WHERE "ideas"."id" = ?[0m  [["title", "asd"], ["updated_at", "2020-01-03 13:37:06.133060"], ["id", 27]]
+  [1m[35m (99.5ms)[0m  [1m[36mcommit transaction[0m
+Completed 200 OK in 111ms (Views: 0.4ms | ActiveRecord: 100.6ms)
+
+
+Started PUT "/api/v1/ideas/27" for ::1 at 2020-01-03 19:07:07 +0530
+Processing by Api::V1::IdeasController#update as HTML
+  Parameters: {"idea"=>{"title"=>"asd", "body"=>"asd"}, "id"=>"27"}
+  [1m[36mIdea Load (0.2ms)[0m  [1m[34mSELECT  "ideas".* FROM "ideas" WHERE "ideas"."id" = ? LIMIT ?[0m  [["id", 27], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[33mUPDATE "ideas" SET "body" = ?, "updated_at" = ? WHERE "ideas"."id" = ?[0m  [["body", "asd"], ["updated_at", "2020-01-03 13:37:07.664225"], ["id", 27]]
+  [1m[35m (72.8ms)[0m  [1m[36mcommit transaction[0m
+Completed 200 OK in 81ms (Views: 0.3ms | ActiveRecord: 73.5ms)
+
+
+Started GET "/api/v1/ideas.json" for ::1 at 2020-01-03 19:07:11 +0530
+Processing by Api::V1::IdeasController#index as JSON
+  [1m[36mIdea Load (0.4ms)[0m  [1m[34mSELECT "ideas".* FROM "ideas" ORDER BY created_at DESC[0m
+Completed 200 OK in 10ms (Views: 9.1ms | ActiveRecord: 0.4ms)
+
+
+Started PUT "/api/v1/ideas/26" for ::1 at 2020-01-03 19:07:15 +0530
+Processing by Api::V1::IdeasController#update as HTML
+  Parameters: {"idea"=>{"title"=>"Newwww", "body"=>"very newwww"}, "id"=>"26"}
+  [1m[36mIdea Load (0.3ms)[0m  [1m[34mSELECT  "ideas".* FROM "ideas" WHERE "ideas"."id" = ? LIMIT ?[0m  [["id", 26], ["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mcommit transaction[0m
+Completed 200 OK in 3ms (Views: 0.3ms | ActiveRecord: 0.4ms)
+
+
+Started PUT "/api/v1/ideas/19" for ::1 at 2020-01-03 19:07:21 +0530
+Processing by Api::V1::IdeasController#update as HTML
+  Parameters: {"idea"=>{"title"=>"Hiasd", "body"=>"asdasd"}, "id"=>"19"}
+  [1m[36mIdea Load (0.7ms)[0m  [1m[34mSELECT  "ideas".* FROM "ideas" WHERE "ideas"."id" = ? LIMIT ?[0m  [["id", 19], ["LIMIT", 1]]
+  [1m[35m (0.5ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.2ms)[0m  [1m[36mcommit transaction[0m
+Completed 200 OK in 12ms (Views: 2.0ms | ActiveRecord: 1.5ms)
+
+
+Started PUT "/api/v1/ideas/19" for ::1 at 2020-01-03 19:07:22 +0530
+Processing by Api::V1::IdeasController#update as HTML
+  Parameters: {"idea"=>{"title"=>"Hiasd", "body"=>"asdasd"}, "id"=>"19"}
+  [1m[36mIdea Load (0.2ms)[0m  [1m[34mSELECT  "ideas".* FROM "ideas" WHERE "ideas"."id" = ? LIMIT ?[0m  [["id", 19], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mcommit transaction[0m
+Completed 200 OK in 4ms (Views: 0.4ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/api/v1/ideas.json" for ::1 at 2020-01-03 19:08:32 +0530
+Processing by Api::V1::IdeasController#index as JSON
+  [1m[36mIdea Load (0.2ms)[0m  [1m[34mSELECT "ideas".* FROM "ideas" ORDER BY created_at DESC[0m
+Completed 200 OK in 7ms (Views: 6.0ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/api/v1/ideas.json" for ::1 at 2020-01-03 19:09:02 +0530
+Processing by Api::V1::IdeasController#index as JSON
+  [1m[36mIdea Load (0.9ms)[0m  [1m[34mSELECT "ideas".* FROM "ideas" ORDER BY created_at DESC[0m
+Completed 200 OK in 13ms (Views: 11.8ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/api/v1/ideas.json" for ::1 at 2020-01-03 19:09:05 +0530
+Processing by Api::V1::IdeasController#index as JSON
+  [1m[36mIdea Load (0.3ms)[0m  [1m[34mSELECT "ideas".* FROM "ideas" ORDER BY created_at DESC[0m
+Completed 200 OK in 7ms (Views: 6.2ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/api/v1/ideas.json" for ::1 at 2020-01-03 19:09:08 +0530
+Processing by Api::V1::IdeasController#index as JSON
+  [1m[36mIdea Load (0.4ms)[0m  [1m[34mSELECT "ideas".* FROM "ideas" ORDER BY created_at DESC[0m
+Completed 200 OK in 7ms (Views: 6.1ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/api/v1/ideas.json" for ::1 at 2020-01-03 19:10:06 +0530
+Processing by Api::V1::IdeasController#index as JSON
+  [1m[36mIdea Load (0.3ms)[0m  [1m[34mSELECT "ideas".* FROM "ideas" ORDER BY created_at DESC[0m
+Completed 200 OK in 8ms (Views: 7.2ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/api/v1/ideas.json" for ::1 at 2020-01-03 19:10:42 +0530
+Processing by Api::V1::IdeasController#index as JSON
+  [1m[36mIdea Load (0.3ms)[0m  [1m[34mSELECT "ideas".* FROM "ideas" ORDER BY created_at DESC[0m
+Completed 200 OK in 8ms (Views: 6.9ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/api/v1/ideas.json" for ::1 at 2020-01-03 19:10:46 +0530
+Processing by Api::V1::IdeasController#index as JSON
+  [1m[36mIdea Load (0.3ms)[0m  [1m[34mSELECT "ideas".* FROM "ideas" ORDER BY created_at DESC[0m
+Completed 200 OK in 7ms (Views: 6.1ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/api/v1/ideas.json" for ::1 at 2020-01-03 19:10:48 +0530
+Processing by Api::V1::IdeasController#index as JSON
+  [1m[36mIdea Load (0.3ms)[0m  [1m[34mSELECT "ideas".* FROM "ideas" ORDER BY created_at DESC[0m
+Completed 200 OK in 6ms (Views: 5.7ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/api/v1/ideas.json" for ::1 at 2020-01-03 19:10:57 +0530
+Processing by Api::V1::IdeasController#index as JSON
+  [1m[36mIdea Load (0.4ms)[0m  [1m[34mSELECT "ideas".* FROM "ideas" ORDER BY created_at DESC[0m
+Completed 200 OK in 13ms (Views: 11.9ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/api/v1/ideas.json" for ::1 at 2020-01-03 19:11:00 +0530
+Processing by Api::V1::IdeasController#index as JSON
+  [1m[36mIdea Load (0.9ms)[0m  [1m[34mSELECT "ideas".* FROM "ideas" ORDER BY created_at DESC[0m
+Completed 200 OK in 19ms (Views: 17.6ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/api/v1/ideas.json" for ::1 at 2020-01-03 19:11:01 +0530
+Processing by Api::V1::IdeasController#index as JSON
+  [1m[36mIdea Load (0.9ms)[0m  [1m[34mSELECT "ideas".* FROM "ideas" ORDER BY created_at DESC[0m
+Completed 200 OK in 10ms (Views: 8.9ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/api/v1/ideas.json" for ::1 at 2020-01-03 19:11:02 +0530
+Processing by Api::V1::IdeasController#index as JSON
+  [1m[36mIdea Load (0.3ms)[0m  [1m[34mSELECT "ideas".* FROM "ideas" ORDER BY created_at DESC[0m
+Completed 200 OK in 20ms (Views: 18.9ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/api/v1/ideas.json" for ::1 at 2020-01-03 19:11:08 +0530
+Processing by Api::V1::IdeasController#index as JSON
+  [1m[36mIdea Load (1.5ms)[0m  [1m[34mSELECT "ideas".* FROM "ideas" ORDER BY created_at DESC[0m
+Completed 200 OK in 33ms (Views: 30.8ms | ActiveRecord: 1.5ms)
+
+
+Started GET "/api/v1/ideas.json" for ::1 at 2020-01-03 19:11:49 +0530
+Processing by Api::V1::IdeasController#index as JSON
+  [1m[36mIdea Load (0.3ms)[0m  [1m[34mSELECT "ideas".* FROM "ideas" ORDER BY created_at DESC[0m
+Completed 200 OK in 8ms (Views: 7.8ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/api/v1/ideas.json" for ::1 at 2020-01-03 19:11:52 +0530
+Processing by Api::V1::IdeasController#index as JSON
+  [1m[36mIdea Load (0.3ms)[0m  [1m[34mSELECT "ideas".* FROM "ideas" ORDER BY created_at DESC[0m
+Completed 200 OK in 9ms (Views: 8.5ms | ActiveRecord: 0.3ms)
+
+
+Started PUT "/api/v1/ideas/20" for ::1 at 2020-01-03 19:12:05 +0530
+Processing by Api::V1::IdeasController#update as HTML
+  Parameters: {"idea"=>{"title"=>"NEw title", "body"=>"New things"}, "id"=>"20"}
+  [1m[36mIdea Load (0.4ms)[0m  [1m[34mSELECT  "ideas".* FROM "ideas" WHERE "ideas"."id" = ? LIMIT ?[0m  [["id", 20], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mcommit transaction[0m
+Completed 200 OK in 5ms (Views: 0.5ms | ActiveRecord: 0.6ms)
+
+
+Started PUT "/api/v1/ideas/25" for ::1 at 2020-01-03 19:12:06 +0530
+Processing by Api::V1::IdeasController#update as HTML
+  Parameters: {"idea"=>{"title"=>"new1", "body"=>"idea1"}, "id"=>"25"}
+  [1m[36mIdea Load (0.2ms)[0m  [1m[34mSELECT  "ideas".* FROM "ideas" WHERE "ideas"."id" = ? LIMIT ?[0m  [["id", 25], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mcommit transaction[0m
+Completed 200 OK in 3ms (Views: 0.3ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/api/v1/ideas.json" for ::1 at 2020-01-03 19:12:42 +0530
+Processing by Api::V1::IdeasController#index as JSON
+  [1m[36mIdea Load (0.6ms)[0m  [1m[34mSELECT "ideas".* FROM "ideas" ORDER BY created_at DESC[0m
+Completed 200 OK in 7ms (Views: 6.2ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/api/v1/ideas.json" for ::1 at 2020-01-03 19:12:49 +0530
+Processing by Api::V1::IdeasController#index as JSON
+  [1m[36mIdea Load (0.2ms)[0m  [1m[34mSELECT "ideas".* FROM "ideas" ORDER BY created_at DESC[0m
+Completed 200 OK in 7ms (Views: 6.6ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/api/v1/ideas.json" for ::1 at 2020-01-03 19:13:24 +0530
+Processing by Api::V1::IdeasController#index as JSON
+  [1m[36mIdea Load (0.3ms)[0m  [1m[34mSELECT "ideas".* FROM "ideas" ORDER BY created_at DESC[0m
+Completed 200 OK in 7ms (Views: 6.8ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/api/v1/ideas.json" for ::1 at 2020-01-03 19:13:41 +0530
+Processing by Api::V1::IdeasController#index as JSON
+  [1m[36mIdea Load (0.3ms)[0m  [1m[34mSELECT "ideas".* FROM "ideas" ORDER BY created_at DESC[0m
+Completed 200 OK in 7ms (Views: 6.4ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/api/v1/ideas.json" for ::1 at 2020-01-03 19:13:51 +0530
+Processing by Api::V1::IdeasController#index as JSON
+  [1m[36mIdea Load (0.3ms)[0m  [1m[34mSELECT "ideas".* FROM "ideas" ORDER BY created_at DESC[0m
+Completed 200 OK in 7ms (Views: 6.1ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/api/v1/ideas.json" for ::1 at 2020-01-03 19:13:56 +0530
+Processing by Api::V1::IdeasController#index as JSON
+  [1m[36mIdea Load (0.4ms)[0m  [1m[34mSELECT "ideas".* FROM "ideas" ORDER BY created_at DESC[0m
+Completed 200 OK in 7ms (Views: 6.0ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/api/v1/ideas.json" for ::1 at 2020-01-03 19:14:06 +0530
+Processing by Api::V1::IdeasController#index as JSON
+  [1m[36mIdea Load (0.4ms)[0m  [1m[34mSELECT "ideas".* FROM "ideas" ORDER BY created_at DESC[0m
+Completed 200 OK in 9ms (Views: 7.9ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/api/v1/ideas.json" for ::1 at 2020-01-03 19:14:11 +0530
+Processing by Api::V1::IdeasController#index as JSON
+  [1m[36mIdea Load (0.3ms)[0m  [1m[34mSELECT "ideas".* FROM "ideas" ORDER BY created_at DESC[0m
+Completed 200 OK in 7ms (Views: 6.8ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/api/v1/ideas.json" for ::1 at 2020-01-03 19:22:15 +0530
+Processing by Api::V1::IdeasController#index as JSON
+  [1m[36mIdea Load (0.3ms)[0m  [1m[34mSELECT "ideas".* FROM "ideas" ORDER BY created_at DESC[0m
+Completed 200 OK in 9ms (Views: 8.4ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/api/v1/ideas.json" for ::1 at 2020-01-06 11:27:45 +0530
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by Api::V1::IdeasController#index as JSON
+  [1m[36mIdea Load (8.7ms)[0m  [1m[34mSELECT "ideas".* FROM "ideas" ORDER BY created_at DESC[0m
+Completed 200 OK in 22ms (Views: 9.9ms | ActiveRecord: 9.3ms)
+
+
+Started PUT "/api/v1/ideas/26" for ::1 at 2020-01-06 11:28:09 +0530
+Processing by Api::V1::IdeasController#update as HTML
+  Parameters: {"idea"=>{"title"=>"Newwww", "body"=>"very newwww"}, "id"=>"26"}
+  [1m[36mIdea Load (0.2ms)[0m  [1m[34mSELECT  "ideas".* FROM "ideas" WHERE "ideas"."id" = ? LIMIT ?[0m  [["id", 26], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mcommit transaction[0m
+Completed 200 OK in 64ms (Views: 0.5ms | ActiveRecord: 0.6ms)
+
+
+Started PUT "/api/v1/ideas/25" for ::1 at 2020-01-06 11:28:11 +0530
+Processing by Api::V1::IdeasController#update as HTML
+  Parameters: {"idea"=>{"title"=>"new1", "body"=>"idea1"}, "id"=>"25"}
+  [1m[36mIdea Load (0.4ms)[0m  [1m[34mSELECT  "ideas".* FROM "ideas" WHERE "ideas"."id" = ? LIMIT ?[0m  [["id", 25], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.2ms)[0m  [1m[36mcommit transaction[0m
+Completed 200 OK in 8ms (Views: 1.2ms | ActiveRecord: 0.7ms)
+
+
+Started PUT "/api/v1/ideas/20" for ::1 at 2020-01-06 11:28:13 +0530
+Processing by Api::V1::IdeasController#update as HTML
+  Parameters: {"idea"=>{"title"=>"NEw title", "body"=>"New things"}, "id"=>"20"}
+  [1m[36mIdea Load (0.4ms)[0m  [1m[34mSELECT  "ideas".* FROM "ideas" WHERE "ideas"."id" = ? LIMIT ?[0m  [["id", 20], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.2ms)[0m  [1m[36mcommit transaction[0m
+Completed 200 OK in 8ms (Views: 1.0ms | ActiveRecord: 0.7ms)
+
+
+Started PUT "/api/v1/ideas/19" for ::1 at 2020-01-06 11:28:14 +0530
+Processing by Api::V1::IdeasController#update as HTML
+  Parameters: {"idea"=>{"title"=>"Hiasd", "body"=>"asdasd"}, "id"=>"19"}
+  [1m[36mIdea Load (0.7ms)[0m  [1m[34mSELECT  "ideas".* FROM "ideas" WHERE "ideas"."id" = ? LIMIT ?[0m  [["id", 19], ["LIMIT", 1]]
+  [1m[35m (0.5ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.3ms)[0m  [1m[36mcommit transaction[0m
+Completed 200 OK in 12ms (Views: 1.2ms | ActiveRecord: 1.4ms)
+
+
+Started PUT "/api/v1/ideas/19" for ::1 at 2020-01-06 11:28:18 +0530
+Processing by Api::V1::IdeasController#update as HTML
+  Parameters: {"idea"=>{"title"=>"Hiasd", "body"=>"asdasd"}, "id"=>"19"}
+  [1m[36mIdea Load (0.9ms)[0m  [1m[34mSELECT  "ideas".* FROM "ideas" WHERE "ideas"."id" = ? LIMIT ?[0m  [["id", 19], ["LIMIT", 1]]
+  [1m[35m (0.4ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.2ms)[0m  [1m[36mcommit transaction[0m
+Completed 200 OK in 10ms (Views: 1.3ms | ActiveRecord: 1.5ms)
+
+
+Started PUT "/api/v1/ideas/5" for ::1 at 2020-01-06 11:28:20 +0530
+Processing by Api::V1::IdeasController#update as HTML
+  Parameters: {"idea"=>{"title"=>"New title", "body"=>"New body"}, "id"=>"5"}
+  [1m[36mIdea Load (0.5ms)[0m  [1m[34mSELECT  "ideas".* FROM "ideas" WHERE "ideas"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.3ms)[0m  [1m[36mcommit transaction[0m
+Completed 200 OK in 10ms (Views: 1.7ms | ActiveRecord: 1.0ms)
+
+
+Started DELETE "/api/v1/ideas/12" for ::1 at 2020-01-06 11:28:20 +0530
+Processing by Api::V1::IdeasController#destroy as HTML
+  Parameters: {"id"=>"12"}
+  [1m[36mIdea Load (0.7ms)[0m  [1m[34mSELECT  "ideas".* FROM "ideas" WHERE "ideas"."id" = ? LIMIT ?[0m  [["id", 12], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (3.6ms)[0m  [1m[31mDELETE FROM "ideas" WHERE "ideas"."id" = ?[0m  [["id", 12]]
+  [1m[35m (136.7ms)[0m  [1m[36mcommit transaction[0m
+Completed 204 No Content in 148ms (ActiveRecord: 141.3ms)
+
+
+Started DELETE "/api/v1/ideas/11" for ::1 at 2020-01-06 11:28:21 +0530
+Processing by Api::V1::IdeasController#destroy as HTML
+  Parameters: {"id"=>"11"}
+  [1m[36mIdea Load (0.4ms)[0m  [1m[34mSELECT  "ideas".* FROM "ideas" WHERE "ideas"."id" = ? LIMIT ?[0m  [["id", 11], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (2.1ms)[0m  [1m[31mDELETE FROM "ideas" WHERE "ideas"."id" = ?[0m  [["id", 11]]
+  [1m[35m (112.0ms)[0m  [1m[36mcommit transaction[0m
+Completed 204 No Content in 123ms (ActiveRecord: 114.7ms)
+
+
+Started DELETE "/api/v1/ideas/19" for ::1 at 2020-01-06 11:28:21 +0530
+Processing by Api::V1::IdeasController#destroy as HTML
+  Parameters: {"id"=>"19"}
+  [1m[36mIdea Load (0.6ms)[0m  [1m[34mSELECT  "ideas".* FROM "ideas" WHERE "ideas"."id" = ? LIMIT ?[0m  [["id", 19], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (2.4ms)[0m  [1m[31mDELETE FROM "ideas" WHERE "ideas"."id" = ?[0m  [["id", 19]]
+  [1m[35m (85.2ms)[0m  [1m[36mcommit transaction[0m
+Completed 204 No Content in 97ms (ActiveRecord: 88.4ms)
+
+
+Started DELETE "/api/v1/ideas/18" for ::1 at 2020-01-06 11:28:21 +0530
+Processing by Api::V1::IdeasController#destroy as HTML
+  Parameters: {"id"=>"18"}
+  [1m[36mIdea Load (0.5ms)[0m  [1m[34mSELECT  "ideas".* FROM "ideas" WHERE "ideas"."id" = ? LIMIT ?[0m  [["id", 18], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.8ms)[0m  [1m[31mDELETE FROM "ideas" WHERE "ideas"."id" = ?[0m  [["id", 18]]
+  [1m[35m (109.6ms)[0m  [1m[36mcommit transaction[0m
+Completed 204 No Content in 118ms (ActiveRecord: 111.1ms)
+
+
+Started DELETE "/api/v1/ideas/17" for ::1 at 2020-01-06 11:28:22 +0530
+Processing by Api::V1::IdeasController#destroy as HTML
+  Parameters: {"id"=>"17"}
+  [1m[36mIdea Load (0.4ms)[0m  [1m[34mSELECT  "ideas".* FROM "ideas" WHERE "ideas"."id" = ? LIMIT ?[0m  [["id", 17], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.6ms)[0m  [1m[31mDELETE FROM "ideas" WHERE "ideas"."id" = ?[0m  [["id", 17]]
+  [1m[35m (99.6ms)[0m  [1m[36mcommit transaction[0m
+Completed 204 No Content in 108ms (ActiveRecord: 100.8ms)
+
+
+Started DELETE "/api/v1/ideas/16" for ::1 at 2020-01-06 11:28:22 +0530
+Processing by Api::V1::IdeasController#destroy as HTML
+  Parameters: {"id"=>"16"}
+  [1m[36mIdea Load (0.5ms)[0m  [1m[34mSELECT  "ideas".* FROM "ideas" WHERE "ideas"."id" = ? LIMIT ?[0m  [["id", 16], ["LIMIT", 1]]
+  [1m[35m (0.4ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (1.0ms)[0m  [1m[31mDELETE FROM "ideas" WHERE "ideas"."id" = ?[0m  [["id", 16]]
+  [1m[35m (107.8ms)[0m  [1m[36mcommit transaction[0m
+Completed 204 No Content in 119ms (ActiveRecord: 109.7ms)
+
+
+Started DELETE "/api/v1/ideas/15" for ::1 at 2020-01-06 11:28:22 +0530
+Processing by Api::V1::IdeasController#destroy as HTML
+  Parameters: {"id"=>"15"}
+  [1m[36mIdea Load (0.4ms)[0m  [1m[34mSELECT  "ideas".* FROM "ideas" WHERE "ideas"."id" = ? LIMIT ?[0m  [["id", 15], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.8ms)[0m  [1m[31mDELETE FROM "ideas" WHERE "ideas"."id" = ?[0m  [["id", 15]]
+  [1m[35m (148.5ms)[0m  [1m[36mcommit transaction[0m
+Completed 204 No Content in 157ms (ActiveRecord: 149.9ms)
+
+
+Started DELETE "/api/v1/ideas/14" for ::1 at 2020-01-06 11:28:23 +0530
+Processing by Api::V1::IdeasController#destroy as HTML
+  Parameters: {"id"=>"14"}
+  [1m[36mIdea Load (0.5ms)[0m  [1m[34mSELECT  "ideas".* FROM "ideas" WHERE "ideas"."id" = ? LIMIT ?[0m  [["id", 14], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (2.4ms)[0m  [1m[31mDELETE FROM "ideas" WHERE "ideas"."id" = ?[0m  [["id", 14]]
+  [1m[35m (99.1ms)[0m  [1m[36mcommit transaction[0m
+Completed 204 No Content in 111ms (ActiveRecord: 102.1ms)
+
+
+Started DELETE "/api/v1/ideas/13" for ::1 at 2020-01-06 11:28:23 +0530
+Processing by Api::V1::IdeasController#destroy as HTML
+  Parameters: {"id"=>"13"}
+  [1m[36mIdea Load (0.5ms)[0m  [1m[34mSELECT  "ideas".* FROM "ideas" WHERE "ideas"."id" = ? LIMIT ?[0m  [["id", 13], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (2.3ms)[0m  [1m[31mDELETE FROM "ideas" WHERE "ideas"."id" = ?[0m  [["id", 13]]
+  [1m[35m (85.5ms)[0m  [1m[36mcommit transaction[0m
+Completed 204 No Content in 94ms (ActiveRecord: 88.5ms)
+
+
+Started DELETE "/api/v1/ideas/10" for ::1 at 2020-01-06 11:28:25 +0530
+Processing by Api::V1::IdeasController#destroy as HTML
+  Parameters: {"id"=>"10"}
+  [1m[36mIdea Load (0.4ms)[0m  [1m[34mSELECT  "ideas".* FROM "ideas" WHERE "ideas"."id" = ? LIMIT ?[0m  [["id", 10], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (2.3ms)[0m  [1m[31mDELETE FROM "ideas" WHERE "ideas"."id" = ?[0m  [["id", 10]]
+  [1m[35m (104.1ms)[0m  [1m[36mcommit transaction[0m
+Completed 204 No Content in 113ms (ActiveRecord: 107.0ms)
+
+
+Started DELETE "/api/v1/ideas/9" for ::1 at 2020-01-06 11:28:25 +0530
+Processing by Api::V1::IdeasController#destroy as HTML
+  Parameters: {"id"=>"9"}
+  [1m[36mIdea Load (0.4ms)[0m  [1m[34mSELECT  "ideas".* FROM "ideas" WHERE "ideas"."id" = ? LIMIT ?[0m  [["id", 9], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (2.9ms)[0m  [1m[31mDELETE FROM "ideas" WHERE "ideas"."id" = ?[0m  [["id", 9]]
+  [1m[35m (91.5ms)[0m  [1m[36mcommit transaction[0m
+Completed 204 No Content in 104ms (ActiveRecord: 95.0ms)
+
+
+Started DELETE "/api/v1/ideas/8" for ::1 at 2020-01-06 11:28:26 +0530
+Processing by Api::V1::IdeasController#destroy as HTML
+  Parameters: {"id"=>"8"}
+  [1m[36mIdea Load (0.4ms)[0m  [1m[34mSELECT  "ideas".* FROM "ideas" WHERE "ideas"."id" = ? LIMIT ?[0m  [["id", 8], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (2.5ms)[0m  [1m[31mDELETE FROM "ideas" WHERE "ideas"."id" = ?[0m  [["id", 8]]
+  [1m[35m (90.1ms)[0m  [1m[36mcommit transaction[0m
+Completed 204 No Content in 102ms (ActiveRecord: 93.3ms)
+
+
+Started DELETE "/api/v1/ideas/7" for ::1 at 2020-01-06 11:28:26 +0530
+Processing by Api::V1::IdeasController#destroy as HTML
+  Parameters: {"id"=>"7"}
+  [1m[36mIdea Load (0.4ms)[0m  [1m[34mSELECT  "ideas".* FROM "ideas" WHERE "ideas"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.8ms)[0m  [1m[31mDELETE FROM "ideas" WHERE "ideas"."id" = ?[0m  [["id", 7]]
+  [1m[35m (101.4ms)[0m  [1m[36mcommit transaction[0m
+Completed 204 No Content in 113ms (ActiveRecord: 102.8ms)
+
+
+Started DELETE "/api/v1/ideas/6" for ::1 at 2020-01-06 11:28:26 +0530
+Processing by Api::V1::IdeasController#destroy as HTML
+  Parameters: {"id"=>"6"}
+  [1m[36mIdea Load (0.4ms)[0m  [1m[34mSELECT  "ideas".* FROM "ideas" WHERE "ideas"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (2.2ms)[0m  [1m[31mDELETE FROM "ideas" WHERE "ideas"."id" = ?[0m  [["id", 6]]
+  [1m[35m (78.4ms)[0m  [1m[36mcommit transaction[0m
+Completed 204 No Content in 90ms (ActiveRecord: 81.2ms)
+
+
